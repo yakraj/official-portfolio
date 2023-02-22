@@ -1,0 +1,90 @@
+.parentImage {
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  height: 63px;
+  border-radius: 10px;
+  width: 61px;
+  position: relative;
+  overflow: hidden;
+  transform: rotate(-10deg);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.parentImage:hover {
+  width: 240px;
+}
+
+.parentImage img {
+  height: 60px;
+  width: 60px;
+  margin-right: 6px;
+  border-radius: 10px;
+  padding: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background-color: #fff;
+  height: 100%;
+  filter: sepia(1) contrast(1.5) grayscale(1);
+}
+
+.parentImage img:hover {
+  filter: none;
+}
+
+.facebook,
+.youtube,
+.instagram,
+.twitter,
+.linkedin,
+.github,
+.website {
+  position: absolute;
+}
+
+.parentImage h3 {
+  margin: 0px;
+  color: #fff;
+  padding: 0;
+  font-weight: 100;
+  font-size: 1.7rem;
+}
+.youtube {
+  background: #fff;
+  top: 80px;
+  transition: all 0.3s ease-in-out;
+}
+.youtube:hover {
+  background-color: #e64b42;
+}
+
+.twitter {
+  background: #fff;
+  top: 160px;
+}
+.twitter:hover {
+  background: #55adee;
+}
+.linkedin {
+  background: #fff;
+  top: 240px;
+}
+.linkedin:hover {
+  background: #007bb5;
+}
+.github {
+  background: #fff;
+  top: 320px;
+}
+.github:hover {
+  background: #000;
+}
+.website {
+  background: #fff;
+  top: 400px;
+}
+.website:hover {
+  background: #2552b6;
+}

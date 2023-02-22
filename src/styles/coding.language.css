@@ -1,0 +1,122 @@
+.language-second,
+.language-center,
+.language-last,
+.language-first {
+  width: 200px;
+  height: 66px;
+  margin: 20px;
+  /* background: red; */
+  box-shadow: 1px 1px 5px grey, 1px 1px 10px grey, 1px 1px 15px grey;
+  display: flex;
+  justify-content: center;
+  border-radius: 50px;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.language-hide {
+  /* opacity: 0; */
+}
+.languages-slider .first-hide {
+  position: absolute;
+  left: 10.5%;
+  bottom: 2%;
+  opacity: 0;
+}
+.languages-slider .language-second {
+  position: absolute;
+  left: 22.5%;
+  bottom: 2%;
+}
+.languages-slider .language-center {
+  position: absolute;
+  left: 34.5%;
+  bottom: 2%;
+}
+
+.languages-slider .language-last {
+  position: absolute;
+  left: 52.5%;
+  bottom: 2%;
+}
+.languages-slider .last-hide {
+  position: absolute;
+  left: 64.5%;
+  bottom: 2%;
+  opacity: 0;
+}
+
+.language-second,
+.language-first {
+  width: 150px;
+  height: 40px;
+  margin-right: -10px;
+}
+
+.languages-slider h3 {
+  font-size: 0.7rem;
+
+  text-shadow: 0px 0px 10px #000, 0px 0px 10px #000, 0px 0px 15px #000;
+}
+.language-last {
+  width: 150px;
+  height: 40px;
+  margin-left: -10px;
+}
+.languages-slider {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border-radius: 15px;
+  height: 100%;
+}
+
+.language-center h3 {
+  margin: 0px;
+  font-size: 1.1rem;
+  color: orange;
+  /* font-size: 1rem; */
+}
+.language-center {
+  background: attr(clour);
+  flex-direction: column;
+}
+
+.language-progressbar {
+  height: 10px;
+  width: 80%;
+  /* overflow: hidden; */
+  border-radius: 15px;
+  background: grey;
+  position: relative;
+}
+
+.language-progressbar::after {
+  content: "";
+  height: 15px;
+  left: 65%;
+  top: -2.5px;
+  width: 15px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: red;
+
+  animation: ProgessbarPoint 2s;
+}
+.language-progressbar::before {
+  content: "";
+  height: 10px;
+  left: 0px;
+  border-radius: 15px;
+  /* top: -2.5px; */
+  width: 68%;
+  /* border-radius: 50%; */
+  position: absolute;
+  background-color: green;
+  animation: ProgessbarSlide 2s;
+}
+
+/* languages starts from here */
+
+/*  animation starts from here*/

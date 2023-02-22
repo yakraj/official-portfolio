@@ -1,0 +1,105 @@
+.second-page {
+  height: 100vh;
+  width: 100%;
+  background: #c0dad9;
+  display: flex;
+  background-attachment: fixed;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.card {
+  height: 281px;
+  width: 198px;
+  /* border: 1px solid greenyellow; */
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  background-size: cover;
+  font-family: height;
+}
+
+.card:hover {
+  z-index: 50;
+  transform: rotate(0deg);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out !important;
+}
+.first {
+  position: absolute;
+  z-index: 1;
+  margin-left: -1007px;
+  margin-top: -349px;
+  transform: rotate(-10deg);
+  transition: all 1s ease-in-out;
+}
+.second {
+  position: absolute;
+  z-index: 2;
+  margin-left: -745px;
+  margin-top: -200px;
+  transform: rotate(-6deg);
+  transition: all 1s ease-in-out;
+}
+
+.third {
+  position: absolute;
+  z-index: 3;
+  margin-left: -493px;
+  margin-top: -40px;
+  transform: rotate(-7deg);
+  transition: all 1s ease-in-out;
+}
+
+.fourth {
+  position: absolute;
+  z-index: 10;
+  height: 370px;
+  width: 250px;
+  margin-left: -256px;
+  margin-top: 130px;
+  transform: rotate(0deg);
+  transition: all 1s ease-in-out;
+}
+
+.fifth {
+  position: absolute;
+  z-index: 5;
+  margin-left: -17px;
+  margin-top: 252px;
+  transform: rotate(10deg);
+  transition: all 1s ease-in-out;
+}
+.sixth {
+  position: absolute;
+  z-index: 4;
+  margin-left: 311px;
+  margin-top: 450px;
+  transform: rotate(25deg);
+  transition: all 1s ease-in-out;
+}
+
+.hide-first {
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  margin-left: -1308px;
+  margin-top: -498px;
+  transform: rotate(-10deg);
+  transition: all 1s ease-in-out;
+}
+.hide-last {
+  position: absolute;
+  z-index: 5;
+  opacity: 0;
+  margin-left: 548px;
+  margin-top: 667px;
+  transform: rotate(9deg);
+  transition: all 1s ease-in-out;
+}

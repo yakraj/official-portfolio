@@ -1,0 +1,74 @@
+.embed-window {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: fixed;
+  overflow: hidden;
+  background: #dadada;
+  z-index: 1000;
+  box-sizing: border-box;
+  border: 1px solid #000;
+  border-radius: 20px 20px 0 0;
+  animation-name: AnimateWindow;
+  animation-duration: 0.3s;
+}
+
+@keyframes AnimateWindow {
+  from {
+    top: 100vh;
+    height: 0px;
+    width: 0px;
+  }
+  to {
+    height: 100vh;
+    width: 100%;
+    top: 10px;
+  }
+}
+
+.embed-nav-window {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+}
+
+.embed-nav-window input {
+  width: 70%;
+  padding: 10px 20px;
+  font-family: sans-serif;
+  border-radius: 25px;
+}
+.embed-close {
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: red;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.embed-close:hover {
+  background-color: green;
+}
+.embed-close::after {
+  content: "";
+  height: 20px;
+  width: 3px;
+  position: absolute;
+  background-color: #fff;
+  transform: rotate(-45deg);
+}
+.embed-close::before {
+  content: "";
+  height: 20px;
+  width: 3px;
+  position: absolute;
+  transform: rotate(45deg);
+  background-color: #fff;
+}

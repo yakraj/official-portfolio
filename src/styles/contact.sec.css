@@ -1,0 +1,89 @@
+#contact-section {
+  height: 100vh;
+  width: 100%;
+  background: grey;
+  color: aqua;
+  /* display: flex; */
+}
+
+.contact-lists {
+  display: flex;
+  justify-content: space-around;
+}
+.leftside-contct,
+.rightside-contct {
+  /* display: flex; */
+  height: auto;
+  width: 50%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.leftside-contct input::placeholder {
+  color: aqua;
+}
+.leftside-contct {
+  padding-left: 5%;
+  padding-top: 5%;
+}
+.leftside-contct input {
+  padding: 10px;
+  margin: 15px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid darkgrey;
+  outline: none;
+  width: 60%;
+  color: aqua;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.5rem;
+}
+
+.rightside-contct textarea::placeholder {
+  color: aqua;
+}
+.rightside-contct textarea {
+  padding: 10px;
+  background: transparent;
+  /* border: none; */
+  border: 2px solid darkgrey;
+  outline: none;
+  width: 70%;
+  height: 40vh;
+  color: aqua;
+  font-size: 1.5rem;
+}
+.send-mail-button {
+  background-color: transparent;
+  outline: none;
+  letter-spacing: 3px;
+  /* padding: 10px; */
+  /* font-weight: bold; */
+  width: 20%;
+  font-size: 2rem;
+  margin: 40px;
+  color: aqua;
+  border-color: aqua;
+  font-family: "Courier New", Courier, monospace;
+  text-transform: uppercase;
+  transform: skew(35deg);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.send-mail-button p {
+  transition: all 0.5s ease-in-out;
+}
+.send-mail-button:hover p {
+  transform: skew(0deg);
+  font-weight: bold;
+  color: aliceblue;
+}
+.send-mail-button:hover {
+  transform: skew(0deg);
+  background-color: aqua;
+  border-radius: 50px;
+}
+.send-mail-button p {
+  transform: skew(-35deg);
+}
