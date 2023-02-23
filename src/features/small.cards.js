@@ -87,6 +87,7 @@ export const CardaPlay = () => {
   const [dateit, ondateit] = useState(dynamicClass);
   const [mouseOver, onmouseOver] = useState(false);
   const [ranald, onranald] = useState(false);
+  const [newtime, onnewtime] = useState();
   useEffect(() => {
     ondynamicClass(trydata);
     if (mouseOver) {
@@ -138,8 +139,13 @@ export const CardaPlay = () => {
       if (mouseOver) {
         return;
       } else {
-        ClassChange(dynamicClass);
-        onranald(true);
+        if ((newtime) => 2000) {
+          console.log("function reached here");
+          ClassChange(dynamicClass);
+          onranald(true);
+        } else {
+          return;
+        }
       }
     } else {
       return;
@@ -148,6 +154,7 @@ export const CardaPlay = () => {
     setTimeout(() => {
       onranald(false);
     }, 4000);
+    onnewtime(new Date());
   }, [mouseOver]);
 
   return (

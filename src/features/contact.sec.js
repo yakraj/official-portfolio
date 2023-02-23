@@ -37,15 +37,7 @@ export const ContactSec = () => {
     <>
       <div id="contact-section">
         <h1>Contact Me</h1>
-        <hr
-          style={{
-            width: "60%",
-            height: "3px",
-            background: "skyblue",
-            borderRadius: "15px",
-            outline: "none",
-          }}
-        />
+
         <div className="contact-lists">
           <div className="leftside-contct">
             <input
@@ -66,15 +58,7 @@ export const ContactSec = () => {
               type="email"
             />
           </div>
-          <hr
-            vertical
-            style={{
-              width: "2px",
-              // height: "5px",
-              background: "skyblue",
-              borderRadius: "15px",
-            }}
-          />
+
           <div className="rightside-contct">
             <textarea
               value={message}
