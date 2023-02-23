@@ -9,8 +9,7 @@
   box-sizing: border-box;
   border: 1px solid #000;
   border-radius: 20px 20px 0 0;
-  animation-name: AnimateWindow;
-  animation-duration: 0.3s;
+  /* animation: AnimateWindow 0.3s forwards; */
 }
 
 @keyframes AnimateWindow {
@@ -50,6 +49,7 @@
   background-color: red;
   border-radius: 50%;
   cursor: pointer;
+  opacity: 0.7;
   transition: all 0.3s ease-in-out;
 }
 

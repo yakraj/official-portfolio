@@ -8,15 +8,21 @@ export const Portfolio = () => {
         <div className="portfolio-leftside">
           <div className="image-card-container">
             <div className="image-card-right">
-              <div className="image-card">
-                <img
-                  src="https://yakraj.com/images/data-entry.png"
-                  alt="google"
-                />
+              <div className="imagecard-parent">
+                <div className="image-card grid-first-child">
+                  <img
+                    src="https://yakraj.com/images/data-entry.png"
+                    alt="google"
+                  />
+                </div>
+                <div className="grid-third-child">
+                  <h1>INDUSTRIAL</h1>
+                </div>
+                <div className="grid-second-child">
+                  <h1>DATA ENTRY</h1>
+                </div>
               </div>
-              <h1>INDUSTRIAL</h1>
             </div>
-            <h1>DATA ENTRY</h1>
           </div>
           <div className="app-description">
             <p>
@@ -41,6 +47,27 @@ export const Portfolio = () => {
           <hr style={{ width: "70%", height: "2px" }} />
           <h1 className="gallerytext">Gallery</h1>
           <div className="images-slide">
+            <div className="imgcard">
+              <img
+                src="https://yakraj.com/images/data-entry.png"
+                alt="google"
+              />
+              <div className="sectionName">Export Section</div>
+            </div>
+            <div className="imgcard">
+              <img
+                src="https://yakraj.com/images/data-entry.png"
+                alt="google"
+              />
+              <div className="sectionName">Export Section</div>
+            </div>
+            <div className="imgcard">
+              <img
+                src="https://yakraj.com/images/data-entry.png"
+                alt="google"
+              />
+              <div className="sectionName">Export Section</div>
+            </div>
             <div className="imgcard">
               <img
                 src="https://yakraj.com/images/data-entry.png"
