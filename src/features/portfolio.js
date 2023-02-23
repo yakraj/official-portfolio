@@ -41,10 +41,13 @@ export const Portfolio = () => {
           <hr style={{ width: "70%", height: "2px" }} />
           <h1 className="gallerytext">Gallery</h1>
           <div className="images-slide">
-            <img src="https://yakraj.com/images/data-entry.png" alt="google" />
-            <img src="https://yakraj.com/images/data-entry.png" alt="google" />
-            <img src="https://yakraj.com/images/data-entry.png" alt="google" />
-            <img src="https://yakraj.com/images/data-entry.png" alt="google" />
+            <div className="imgcard">
+              <img
+                src="https://yakraj.com/images/data-entry.png"
+                alt="google"
+              />
+              <div className="sectionName">Export Section</div>
+            </div>
           </div>
         </div>
       </div>

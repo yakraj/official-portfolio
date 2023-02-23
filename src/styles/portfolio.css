@@ -49,14 +49,27 @@
   flex-direction: column;
   width: 60%;
 }
-.images-slide img {
-  width: 25%;
+.images-slide .imgcard {
+  width: 35%;
+  height: 25vh;
   padding: 20px;
+
   box-sizing: border-box;
   margin: 5px;
-  background: green;
-  border-radius: 25px;
+  background: #fff;
+  box-shadow: -5px 5px 5px black;
+  border-radius: 15px;
   cursor: zoom-in;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.imgcard .sectionName {
+  color: grey;
+}
+.imgcard img {
+  width: 100%;
 }
 span {
   content: "\201D";
