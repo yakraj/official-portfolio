@@ -137,6 +137,7 @@ export const CardaPlay = () => {
   useEffect(() => {
     if (!ranald) {
       if (mouseOver) {
+        onnewtime(new Date());
         return;
       } else {
         if ((newtime) => 2000) {
@@ -144,10 +145,12 @@ export const CardaPlay = () => {
           ClassChange(dynamicClass);
           onranald(true);
         } else {
+          onnewtime(new Date());
           return;
         }
       }
     } else {
+      onnewtime(new Date());
       return;
     }
 
