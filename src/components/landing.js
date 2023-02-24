@@ -11,7 +11,7 @@ import { EmbedWebsite } from "../features/embed.website";
 import { AboutPage } from "../features/about.page";
 export const Landing = () => {
   const imageRef = useRef(null);
-
+  // added comment
   return (
     <>
       <EmbedWebsite />
