@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/contact.sec.css";
 import emailjs from "emailjs-com";
-
+import { AlertBox } from "./alert.box";
 // import nodemailer from "nodemailer";
 export const ContactSec = () => {
   const [name, onname] = useState();
@@ -13,25 +13,33 @@ export const ContactSec = () => {
     email: emailadd,
     notes: message,
   };
-
-  const SendNow = () =>
-    emailjs
-      .send(
-        "service_0h0znkk",
-        "template_sbt6r2z",
-        templateParams,
-        "k9aK2Ha2qHgCQJvkp"
-      )
-      .then(
-        (response) => {
-          onname("");
-          onemailadd("");
-          onmessage("");
-        },
-        (err) => {
-          console.log("FAILED...", err);
-        }
-      );
+  useEffect(() => {
+    <AlertBox message="it should work now" />;
+  }, []);
+  const SendNow = () => {
+    if (name && message && emailadd.includes("@") && emailadd.includes(".")) {
+      console.log(name, message, emailadd);
+      emailjs
+        .send(
+          "service_0h0znkk",
+          "template_sbt6r2z",
+          templateParams,
+          "k9aK2Ha2qHgCQJvkp"
+        )
+        .then(
+          (response) => {
+            onname("");
+            onemailadd("");
+            onmessage("");
+          },
+          (err) => {
+            console.log("FAILED...", err);
+          }
+        );
+    } else {
+      window.alert("Please fill valied fields");
+    }
+  };
 
   return (
     <>
