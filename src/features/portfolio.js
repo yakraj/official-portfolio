@@ -88,26 +88,25 @@ export const SingleSlide = () => {
 
 export const Portfolio = () => {
   const portfolios = useRef(null);
-  // useEffect(() => {
-  //   const tl = gsap.timeline();
-  //   tl.to(portfolios.current, {
-  //     x: -(portfolios.current.scrollWidth - window.innerWidth),
-  //     ease: "none",
-  //     scrollTrigger: {
-  //       start: "top top",
-  //       trigger: portfolios.current,
-  //       pin: ".wrapper",
-  //       scrub: 1,
-  //       markers: true,
-  //       end: "+=3000",
-  //       pinSpacing: true,
-  //     },
-  //   });
-  // }, []);
+  useEffect(() => {
+    const tl = gsap.timeline();
+    tl.to(portfolios.current, {
+      x: -1500,
+      ease: "none",
+      scrollTrigger: {
+        start: "top top",
+        trigger: portfolios.current,
+        scrub: 1,
+        markers: true,
+        end: "+=3000",
+        pinSpacing: true,
+      },
+    });
+  }, []);
 
   return (
-    <div ref={portfolios} className="portfolio-container">
-      <div className="portfolio-horizontal-scroll">
+    <div className="portfolio-container">
+      <div ref={portfolios} className="portfolio-horizontal-scroll">
         <SingleSlide />
         <SingleSlide />
         <SingleSlide />

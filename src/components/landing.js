@@ -9,11 +9,11 @@ import { Portfolio } from "../features/portfolio";
 import { FirstLanding } from "../features/firstpage";
 import { EmbedWebsite } from "../features/embed.website";
 import { AboutPage } from "../features/about.page";
+import { ScrollTriggerTrial } from "../features/scrolltrigger";
 export const Landing = () => {
-  const imageRef = useRef(null);
-  // added comment
   return (
     <>
+      {/* <ScrollTriggerTrial /> */}
       <EmbedWebsite />
       <FirstLanding />
       <AboutPage />

@@ -7,6 +7,7 @@
 .portfolio-horizontal-scroll {
   display: flex;
   min-height: min-content;
+  position: absolute;
 }
 .single-slide {
   display: flex;
@@ -41,15 +42,19 @@
 .portfolio-container {
   display: flex;
   overflow-x: scroll;
+  height: 300vh;
 }
+
 .grid-first-child::after {
   content: "visit";
   height: 100%;
+  z-index: 50;
   width: 100%;
   background: rgba(128, 128, 128, 0.479);
   position: absolute;
   left: 0;
   top: 0;
+
   display: flex;
   text-decoration: underline;
   justify-content: center;
@@ -122,6 +127,7 @@
   opacity: 1;
 }
 .images-slide .imgcard::before {
+  z-index: 51;
   content: "more";
   position: absolute;
   font-weight: bold;
@@ -142,6 +148,7 @@
 }
 .images-slide .imgcard::after {
   content: "";
+  z-index: 50;
   height: 100%;
   width: 100%;
   background: rgba(128, 128, 128, 0.479);

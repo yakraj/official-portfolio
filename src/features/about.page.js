@@ -1,49 +1,63 @@
 import React, { useRef } from "react";
-
 import Tilt from "react-tilt";
 
 export const AboutPage = () => {
   const imageRef = useRef(null);
   return (
     <div className="landing-firstpage">
-      <div className="leftside">
-        <Tilt
-          options={{
-            reverse: false, // reverse the tilt direction
-            max: 35, // max tilt rotation (degrees)
-            perspective: 1000, // Transform perspective, the lower the more extreme the tilt gets.
-            scale: 1.2, // 2 = 200%, 1.5 = 150%, etc..
-            speed: 300, // Speed of the enter/exit transition
-            transition: true, // Set a transition on enter/exit.
-            axis: null, // What axis should be disabled. Can be X or Y.
-            reset: true, // If the tilt effect has to be reset on exit.
-            easing: "cubic-bezier(.03,.98,.52,.99)", // Easing on enter/exit.
-          }}
-          className="Tilt first-card Tilt-inner"
-        >
-          <div ref={imageRef} className="youtube-image">
+      <p>
+        I<span>create</span>
+        things and
+        <span>Implement</span>
+        ideas on the
+        <span>internet</span>. A<span>Passinate</span>
+        developer who filled with
+        <span>Thrust</span>
+        of
+        <span>create</span>,<span>design</span> and
+        <span>code</span>. constantly
+        <span>seeking</span>
+        out new
+        <span>challenges</span>
+        that allow me to design and
+        <span>build</span>
+        new
+        <span>inventions</span>
+      </p>
+
+      {/* social media icons  */}
+      <div className="social-media-icons">
+        <a href="https://youtube.com/@yakraj" target="_blank">
+          <div className="media-icon youtube-icon">
+            <img src={require("../assets/youtube.com.png")} alt="youtube" />
+          </div>
+        </a>
+
+        <a href="https://www.twitter.com/@yakrajpariyar" target="_blank">
+          <div className="media-icon twitter-icon">
+            <img src={require("../assets/twitter.svg").default} alt="twitter" />
+          </div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/yakraj" target="_blank">
+          <div className="media-icon linkedin-icon">
             <img
-              style={{ width: "5vw" }}
-              alt="youtube"
-              src={require("../assets/youtube-icon.png")}
+              src={require("../assets/linkedin.svg").default}
+              alt="linkedin"
             />
           </div>
-
-          <a
-            href="./#contact-section"
-            style={{ textDecoration: "none" }}
-            className="contact-me-button"
-          >
-            Contact Me
-            <img
-              alt="paper plane"
-              src={require("../assets/paper-plane.svg").default}
-            />
-          </a>
-        </Tilt>
+        </a>
+        <a href="https://www.github.com/yakraj" target="_blank">
+          <div className="media-icon github-icon">
+            <img src={require("../assets/github.svg").default} alt="linkedin" />
+          </div>
+        </a>
+        <a href="https://www.yakraj.com" target="_blank">
+          <div className="media-icon website-icon">
+            <img src={require("../assets/internet.png")} alt="linkedin" />
+          </div>
+        </a>
       </div>
-      <div className="rightside"></div>
-      {/* <CodingLanguages /> */}
     </div>
   );
 };

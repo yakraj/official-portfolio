@@ -7,7 +7,7 @@ export const SocialMedia = () => {
         style={{ position: "absolute", right: "281px", top: "15%" }}
         id="container"
       >
-        <div style={{ position: "relative" }}>
+        {/* <div style={{ position: "relative" }}>
           <a href="https://youtube.com/@yakraj" target="_blank">
             <div class="parentImage youtube">
               <img src={require("../assets/youtube.png")} alt="youtube" />
@@ -39,7 +39,7 @@ export const SocialMedia = () => {
               <h3>Yakraj.com</h3>
             </div>
           </a>
-        </div>
+        </div> */}
       </div>
     </>
   );

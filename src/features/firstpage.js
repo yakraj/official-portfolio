@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../styles/firstpage.css";
 import gsap from "gsap";
-import { scrollTrigger } from "gsap/ScrollTrigger";
+import ScrollTrigger from "gsap/ScrollTrigger";
 export const FirstLanding = () => {
   const [dynamicClass, ondynamicClass] = useState([
     {
@@ -72,23 +72,81 @@ export const FirstLanding = () => {
     },
   ]);
   const DomHouse = useRef(null);
+  const DomeDoor = useRef(null);
+  const youtubeIntro = useRef(null);
+  const withcomputer = useRef(null);
 
   useEffect(() => {
-    let tl = gsap.timeline({
-      // yes, we can add it to an entire timeline!
+    // let tl = gsap.timeline();
+    gsap.registerPlugin(ScrollTrigger);
+    // this is for first trigger
+    var tlfirst = gsap.timeline({
       scrollTrigger: {
-        trigger: ".container",
-        pin: true, // pin the trigger element while active
-        start: "top top", // when the top of the trigger hits the top of the viewport
-        end: "+=500", // end after scrolling 500px beyond the start
-        scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-        snap: {
-          snapTo: "labels", // snap to the closest label in the timeline
-          duration: { min: 0.2, max: 3 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
-          delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
-          ease: "power1.inOut", // the ease of the snap animation ("power3" by default)
-        },
+        trigger: DomHouse.current,
+        // toggleActions: "restart pause reverse pause",
+        start: "bottom bottom",
+        end: "+=1200",
+        scrub: true,
+        markers: true,
       },
+    });
+
+    tlfirst.to([DomHouse.current, DomeDoor.current, youtubeIntro.current], {
+      width: gsap.utils.wrap(["100vw", "26%", "14%"]),
+      height: gsap.utils.wrap(["100vw", "44%", "9%"]),
+      left: gsap.utils.wrap(["", "37%", "50%"]),
+      borderTop: gsap.utils.wrap(["", "22px solid #4c4c4c", ""]),
+      borderLeft: gsap.utils.wrap(["", "22px solid #959595", ""]),
+      borderRight: gsap.utils.wrap(["", "22px solid #959595", ""]),
+      fontSize: "2vw",
+    });
+
+    gsap.to(DomHouse.current, {
+      scrollTrigger: {
+        trigger: DomHouse.current,
+        // toggleActions: "restart pause reverse pause",
+        start: "1200 bottom",
+        end: "+=500",
+        scrub: true,
+        markers: true,
+      },
+      height: "400vw",
+      width: "400vw",
+    });
+    gsap.to(withcomputer.current, {
+      scrollTrigger: {
+        trigger: withcomputer.current,
+        // toggleActions: "restart pause reverse pause",
+        start: "1600 bottom",
+        end: "+=500",
+        scrub: true,
+        markers: true,
+      },
+      opacity: 1,
+    });
+    gsap.to(withcomputer.current, {
+      scrollTrigger: {
+        trigger: withcomputer.current,
+        // toggleActions: "restart pause reverse pause",
+        start: "2100 bottom",
+        end: "+=400",
+        scrub: true,
+        markers: true,
+      },
+      scale: 10,
+      marginLeft: "60%",
+    });
+    gsap.to(DomHouse.current, {
+      scrollTrigger: {
+        trigger: DomHouse.current,
+        // toggleActions: "restart pause reverse pause",
+        start: "2500 bottom",
+        end: "+=400",
+        scrub: true,
+        markers: true,
+      },
+      filter: "brightness(0) invert(1)",
+      opacity: 0,
     });
   });
 
@@ -111,12 +169,19 @@ export const FirstLanding = () => {
             </div>
           );
         })}
-        <div className="dome-door">
+        <div ref={DomeDoor} className="dome-door">
           <img
+            ref={withcomputer}
             alt="programmer"
-            src="http://gogotraining.com/blog/wp-content/uploads/2016/10/Online-Programming-Classes.jpg"
+            src={require("../assets/yakraj computer.webp")}
           />
         </div>
+        <img
+          className="standing-yakraj"
+          alt="standing"
+          src={require("../assets/yakraj standing.webp")}
+        />
+        <div ref={youtubeIntro} className="yakraj-intro-youtube"></div>
       </div>
       <div className="freelancer-dot"></div>
     </div>
