@@ -135,19 +135,32 @@ export const FirstLanding = () => {
   }, []);
 
   useEffect(() => {
-    // eventlistner for font size
-    window.addEventListener("scroll", () => {
-      DomHouse.current.style.fontSize =
-        DomHouse.current.offsetWidth * (1.75 / 100) + "px";
+    const div = DomHouse.current;
+    // create a new ResizeObserver
+    const observer = new ResizeObserver((entries) => {
+      // loop through all entries (should only be one in this case)
+      for (let entry of entries) {
+        // get the new dimensions of the div
+        DomHouse.current.style.fontSize =
+          DomHouse.current.offsetWidth * (1.75 / 100) + "px";
+      }
     });
 
-    // for animation ends
+    // observe the div for size changes
+    observer.observe(div);
 
-    var firstEnd = 0;
-    var secondEnd = 0;
-    var thirdEnd = 0;
-    var fourthEnd = 0;
+    // clean up the observer when the component unmounts
+    return () => observer.disconnect();
+  }, []);
+  useEffect(() => {
+    const wHeight = window.innerHeight;
+    var firstEnd = wHeight * (215 / 100);
+    var secondStart = wHeight * (144 / 100);
+    var secondEnd = wHeight * (72 / 100);
+    var thirdStart = wHeight * (245 / 100);
+    var thirdEnd = wHeight * (87 / 100);
 
+    gsap.set(DomHouse.current, { opacity: 1 }); // set opacity to 1 when entering viewport)
     // let tl = gsap.timeline();
     gsap.registerPlugin(ScrollTrigger);
     // this is for first trigger
@@ -155,85 +168,47 @@ export const FirstLanding = () => {
       scrollTrigger: {
         trigger: DomHouse.current,
         start: "bottom bottom",
-        end: "+=800",
-        scrub: true,
-        // markers: true,
-        onLeaveBack: "reverse",
-
-        onUpdate: function (self) {
-          firstEnd = self.end;
-        },
+        end: `+=${firstEnd}`,
+        scrub: 1,
       },
-      width: gsap.utils.wrap(["100vw", "26%", "14%"]),
-      height: gsap.utils.wrap(["100vw", "44%", "9%"]),
-      left: gsap.utils.wrap(["", "37%", "50%"]),
+      width: gsap.utils.wrap(["400vw", "26%", "30%"]),
+      height: gsap.utils.wrap(["400vw", "44%", "10%"]),
+      left: gsap.utils.wrap(["", "37%", "42%"]),
       borderTop: gsap.utils.wrap(["", "22px solid #4c4c4c", ""]),
       borderLeft: gsap.utils.wrap(["", "22px solid #959595", ""]),
       borderRight: gsap.utils.wrap(["", "22px solid #959595", ""]),
-      onComplete: function () {
-        gsap.to(DomHouse.current, {
-          scrollTrigger: {
-            trigger: DomHouse.current,
-            start: `top+=${firstEnd} bottom`,
-            end: "+=1200",
-            scrub: true,
-            // markers: true,
-            onUpdate: function (self) {
-              secondEnd = self.end;
-
-              // Update the start and end points on each scroll
-              // start = `bottom ${self.trigger.top}`;
-              // end = `+=${window.innerHeight * 2}`;
-              // self.update();
-            },
-          },
-          height: "400vw",
-          width: "400vw",
-          onComplete: function () {
-            gsap.to(withcomputer.current, {
-              scrollTrigger: {
-                trigger: withcomputer.current,
-                // toggleActions: "restart pause reverse pause",
-                start: `top+=${secondEnd} bottom`,
-                end: "+=500",
-                scrub: true,
-                // markers: true,
-                startAt: {
-                  trigger: DomHouse.current,
-                  start: "bottom bottom+=200",
-                },
-                onUpdate: function (self) {
-                  thirdEnd = self.end;
-                  // // Update the start and end points on each scroll
-                  // start = `bottom ${self.trigger.top}`;
-                  // end = `+=${window.innerHeight * 2}`;
-                  // self.update();
-                },
-              },
-              opacity: 1,
-            });
-          },
-        });
-      },
     });
-
+    gsap.to(withcomputer.current, {
+      scrollTrigger: {
+        trigger: withcomputer.current,
+        // toggleActions: "restart pause reverse pause",
+        start: `${secondStart} bottom`,
+        end: `+=${secondEnd}`,
+        scrub: 1,
+        startAt: {
+          trigger: DomHouse.current,
+          start: "bottom bottom+=200",
+        },
+      },
+      opacity: 1,
+    });
     gsap.to(DomHouse.current, {
       scrollTrigger: {
         trigger: DomHouse.current,
-        start: "2500 top",
-        end: "+=400 top",
-        scrub: true,
-        markers: true,
+        start: `${thirdStart} top`,
+        end: `+=${thirdEnd} top`,
+        scrub: 1,
       },
-      filter: "brightness(0) invert(1)",
+      filter: "brightness(0)",
       opacity: 0,
+      display: "none",
       onComplete: function () {
         // Add new scrollTrigger for scrolling upwards
         ScrollTrigger.create({
           trigger: DomHouse.current,
           start: "bottom top", // set to bottom of viewport
           end: "bottom bottom", // set to top of viewport
-          scrub: true,
+          scrub: 1,
           onEnter: function () {
             gsap.set(DomHouse.current, { opacity: 1 }); // set opacity to 1 when entering viewport
           },
@@ -252,7 +227,13 @@ export const FirstLanding = () => {
   return (
     <div ref={appbody} className="firstlanding-page">
       <h1 className="freelancer-text">FREELANCER.</h1>
-      <div ref={DomHouse} className="ImageDome">
+      <div
+        ref={DomHouse}
+        onresize={() => {
+          console.log("resized");
+        }}
+        className="ImageDome"
+      >
         {objects.map((x) => {
           return (
             <div className="dome-brick-layer">

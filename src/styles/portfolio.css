@@ -1,13 +1,12 @@
 .portfolio-container {
-  height: 100vh;
-  width: 100%;
-  background: rgb(68, 68, 68);
-  overflow: hidden;
+  transform: none !important;
 }
 .portfolio-horizontal-scroll {
   display: flex;
   min-height: min-content;
+  max-height: 5000px;
   position: absolute;
+  overflow-x: hidden;
 }
 .single-slide {
   display: flex;
@@ -41,8 +40,10 @@
 }
 .portfolio-container {
   display: flex;
-  overflow-x: scroll;
-  height: 300vh;
+  flex-wrap: nowrap;
+  max-width: 2000px;
+  width: 100%;
+  padding: 1px;
 }
 
 .grid-first-child::after {

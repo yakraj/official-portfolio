@@ -88,24 +88,26 @@ export const SingleSlide = () => {
 
 export const Portfolio = () => {
   const portfolios = useRef(null);
+  const pinParent = useRef(null);
   useEffect(() => {
     const tl = gsap.timeline();
     tl.to(portfolios.current, {
-      x: -1500,
+      x: -4000,
       ease: "none",
       scrollTrigger: {
-        start: "top top",
+        start: "top",
         trigger: portfolios.current,
+        pin: pinParent.current,
         scrub: 1,
-        markers: true,
-        end: "+=3000",
-        pinSpacing: true,
+        end: "+=4000",
+        // pinSpacing: true,
+        // snap: 1 / (portfolios.current.length - 1),
       },
     });
   }, []);
 
   return (
-    <div className="portfolio-container">
+    <div ref={pinParent} className="portfolio-container">
       <div ref={portfolios} className="portfolio-horizontal-scroll">
         <SingleSlide />
         <SingleSlide />
