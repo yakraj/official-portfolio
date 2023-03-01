@@ -76,7 +76,7 @@
 }
 .dome-door img {
   margin-top: 110%;
-  margin-left: 20%;
+  /* margin-left: 20%; */
   opacity: 0;
   width: 100%;
 }
