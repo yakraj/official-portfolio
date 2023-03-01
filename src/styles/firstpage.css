@@ -24,6 +24,7 @@
 }
 .ImageDome {
   position: fixed;
+  z-index: 50;
   bottom: 0;
   height: 20%;
   width: 20%;
