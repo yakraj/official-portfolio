@@ -78,7 +78,8 @@ export const FirstLanding = () => {
 
   // this is only for coding languages bubbles
   const appbody = useRef(null);
-  useEffect(() => {
+
+  const CreateBall = () => {
     setInterval(function () {
       var randomItem =
         dynamicClass[Math.floor(Math.random() * dynamicClass.length)];
@@ -89,6 +90,7 @@ export const FirstLanding = () => {
       ball.style.boxShadow =
         "inset 0px 0px 15px #d1cece, inset 0px 0px 25px #fff, inset 0px 0px 50px #dbdbdb, 0px 0px 10px #a7a5a5";
       ball.style.borderRadius = "50%";
+      ball.style.background = randomItem.colour;
       ball.style.position = "absolute";
       ball.style.display = "flex";
       ball.style.justifyContent = "center";
@@ -104,7 +106,7 @@ export const FirstLanding = () => {
       var insidetext = document.createElement("h3");
       insidetext.innerHTML = randomItem.text;
       insidetext.style.margin = "0px";
-      insidetext.style.color = randomItem.colour;
+
       insidetext.style.fontSize = "1rem";
       ball.appendChild(insidetext);
       /* give it two second of settimeout and take it to random place of window horizontally and vertically */
@@ -132,6 +134,13 @@ export const FirstLanding = () => {
         appbody.current.removeChild(ball);
       }, 8000);
     }, 2000);
+  };
+  useEffect(() => {
+    CreateBall();
+    CreateBall();
+    CreateBall();
+    CreateBall();
+    CreateBall();
   }, []);
 
   useEffect(() => {
@@ -171,6 +180,8 @@ export const FirstLanding = () => {
         end: `+=${firstEnd}`,
         scrub: 1,
       },
+
+      fontWeight: "bold",
       width: gsap.utils.wrap(["400vw", "26%", "30%"]),
       height: gsap.utils.wrap(["400vw", "44%", "10%"]),
       left: gsap.utils.wrap(["", "37%", "42%"]),

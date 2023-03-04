@@ -1,6 +1,8 @@
 .firstlanding-page {
   height: 150vh;
   width: 100%;
+  overflow: hidden;
+  /* position: relative; */
   background: pink;
   display: flex;
   justify-content: center;
@@ -70,9 +72,10 @@
   justify-content: center;
   align-items: center;
   padding: 1px 10px;
-  border: 1px solid rgb(41, 41, 41);
+  border: 1px solid rgb(255 245 0);
   /* font-size: 70%; */
   margin: 0;
+  box-shadow: inset 0px 0px 5px #fff;
 }
 .dome-door {
   /* height: 44%;
@@ -165,3 +168,5 @@
   justify-content: center;
   align-items: center;
 }
+
+/* dummy is here */

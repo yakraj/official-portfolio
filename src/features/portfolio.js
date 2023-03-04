@@ -89,32 +89,29 @@ export const SingleSlide = () => {
 export const Portfolio = () => {
   const portfolios = useRef(null);
   const pinParent = useRef(null);
-  useEffect(() => {
-    const tl = gsap.timeline();
-    tl.to(portfolios.current, {
-      x: -4000,
-      ease: "none",
-      scrollTrigger: {
-        start: "top",
-        trigger: portfolios.current,
-        pin: pinParent.current,
-        scrub: 1,
-        end: "+=4000",
-        // pinSpacing: true,
-        // snap: 1 / (portfolios.current.length - 1),
-      },
-    });
-  }, []);
+  // useEffect(() => {
+  //   const tl = gsap.timeline();
+  //   tl.to(portfolios.current, {
+  //     x: -(portfolios.current.scrollWidth - window.innerWidth),
+  //     ease: "none",
+  //     scrollTrigger: {
+  //       start: "top",
+  //       trigger: portfolios.current,
+  //       pin: pinParent.current,
+  //       pinSpacing: "1px",
+  //       scrub: 1,
+  //       end: "+=4000",
+  //       // snap: 1 / 10,
+  //     },
+  //   });
+  // }, []);
 
   return (
-    <div ref={pinParent} className="portfolio-container">
-      <div ref={portfolios} className="portfolio-horizontal-scroll">
-        <SingleSlide />
-        <SingleSlide />
-        <SingleSlide />
-        <SingleSlide />
-        <SingleSlide />
-      </div>
+    <div className="full-container">
+      <SingleSlide className="container" />
+      <SingleSlide className="container" />
+      <SingleSlide className="container" />
+      <SingleSlide className="container" />
     </div>
   );
 };

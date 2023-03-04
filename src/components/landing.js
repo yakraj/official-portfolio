@@ -13,12 +13,12 @@ import { ScrollTriggerTrial } from "../features/scrolltrigger";
 export const Landing = () => {
   return (
     <>
-      {/* <ScrollTriggerTrial /> */}
       <EmbedWebsite />
       <FirstLanding />
       <AboutPage />
       <CardaPlay />
-      <Portfolio />
+      <ScrollTriggerTrial />
+      {/* <Portfolio /> */}
       <ContactSec />
     </>
   );

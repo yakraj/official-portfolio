@@ -1,10 +1,9 @@
 .portfolio-container {
-  transform: none !important;
+  transform: translate(0px, 0px) !important;
 }
 .portfolio-horizontal-scroll {
   display: flex;
   min-height: min-content;
-  max-height: 5000px;
   position: absolute;
   overflow-x: hidden;
 }
@@ -41,8 +40,8 @@
 .portfolio-container {
   display: flex;
   flex-wrap: nowrap;
-  max-width: 2000px;
   width: 100%;
+  overflow-x: hidden;
   padding: 1px;
 }
 
@@ -71,6 +70,10 @@
 }
 .grid-first-child {
   grid-area: 1 / 1 / 4 / 3;
+}
+.pin-spacer {
+  padding: 0px 0px 4229px !important;
+  height: 4229px !important;
 }
 .grid-third-child {
   grid-area: 1 / 3 / 4 / 4;
@@ -331,4 +334,42 @@ span {
   /* font-size: 5rem; */
   -webkit-text-stroke-width: thin;
   text-align: left;
+}
+/* 
+this is dummy page 
+*/
+.full-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 620vh;
+  overflow: hidden;
+}
+.container {
+  height: 100vh;
+  width: 100%;
+  opacity: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-attachment: fixed;
+  /* text-shadow: 0px 0px 20px grey, 0px 0px 30px #000; */
+}
+.first-container {
+  background: navajowhite;
+}
+.second-container {
+  background: blue;
+}
+.third-container {
+  background: violet;
+}
+.fourth-container {
+  background: yellow;
+}
+.fifth-container {
+  background: red;
+}
+.sixth-container {
+  background: pink;
 }
