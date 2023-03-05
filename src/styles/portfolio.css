@@ -373,3 +373,36 @@ this is dummy page
 .sixth-container {
   background: pink;
 }
+
+.show-more-work {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20%;
+  background-image: url(http://localhost:3000/static/media/more-work.b33fe57eaed62e258db4.webp);
+  box-sizing: border-box;
+  align-items: center;
+  height: 100vh;
+  background-position: center left;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-color: #fefeff;
+  width: 100%;
+}
+
+.show-more-work div {
+  padding: 20px;
+  border-radius: 51px;
+  background: linear-gradient(145deg, #ffffff, #e3e4e4);
+  box-shadow: 5px 5px 15px #767777, -5px -5px 15px #ffffff;
+  /* font-size: 1rem; */
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #d15048 !important;
+  transition: all 0.3s ease-in-out;
+}
+.show-more-work div:hover {
+  /* transition: all 0.3s ease-in-out; */
+  border-radius: 51px;
+  background: #d6d6d8;
+  box-shadow: inset 5px 5px 15px #656566, inset -5px -5px 15px #ffffff;
+}

@@ -40,3 +40,29 @@
   transition: all 0.6s ease-in-out;
   z-index: 49;
 }
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #363a00b6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ababab;
+  box-shadow: inset 16px 16px 32px #959595, inset -16px -16px 32px #c1c1c1;
+  border-radius: 20px;
+  animation: color-change 1s infinite;
+}
+
+@keyframes color-change {
+  0% {
+    background-color: rgb(255, 0, 0);
+  }
+  50% {
+    background-color: rgb(0, 255, 0);
+  }
+  100% {
+    background-color: rgb(0, 0, 255);
+  }
+}

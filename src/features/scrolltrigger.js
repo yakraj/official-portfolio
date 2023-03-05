@@ -1,7 +1,8 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import React, { useState, useRef, useEffect } from "react";
-import { SingleSlide } from "./portfolio";
+import { SingleSlide } from "./portfolio.single.slide";
+
 gsap.registerPlugin(ScrollTrigger);
 
 export const ScrollTriggerTrial = () => {
@@ -50,14 +51,14 @@ export const ScrollTriggerTrial = () => {
         },
       });
       tl.to(data, {
-        background: "red",
+        // background: "red",
         opacity: 1,
         zIndex: 5000,
       }).to(data, {
         duration: 0.1,
         opacity: 0,
         zIndex: 0,
-        background: "blue",
+        // background: "blue",
         display: "none",
       });
 
@@ -106,7 +107,9 @@ export const ScrollTriggerTrial = () => {
           <SingleSlide />
         </div>
         <div ref={foCon} className="fourth-container container">
-          it will be applied here
+          <div className="show-more-work">
+            <div>Explore More</div>
+          </div>
         </div>
       </div>
     </>

@@ -10,12 +10,17 @@ import { FirstLanding } from "../features/firstpage";
 import { EmbedWebsite } from "../features/embed.website";
 import { AboutPage } from "../features/about.page";
 import { ScrollTriggerTrial } from "../features/scrolltrigger";
+import { AlertBox } from "../features/alert.box";
+import { WebsiteInfo } from "../features/website.images";
+
 export const Landing = () => {
   return (
     <>
       <EmbedWebsite />
+      <WebsiteInfo />
       <FirstLanding />
       <AboutPage />
+      <AlertBox />
       <CardaPlay />
       <ScrollTriggerTrial />
       {/* <Portfolio /> */}

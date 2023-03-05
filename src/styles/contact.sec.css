@@ -3,6 +3,7 @@
   width: 100%;
   background: #e1ebf5;
   color: grey;
+  opacity: 0;
   /* display: flex; */
 }
 

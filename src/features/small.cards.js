@@ -1,81 +1,101 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { MainContext } from "../conext/main.context";
+
 import "../styles/small.cards.css";
 import { SocialMedia } from "./social-media";
 export const CardaPlay = () => {
+  const { setpopAnimation, setembedURL } = useContext(MainContext);
+
+  useEffect(() => {}, []);
   const [dynamicClass, ondynamicClass] = useState([
-    { position: "hide-first", data: "" },
+    { position: "hide-first", data: "", embed: "" },
     {
       position: "first",
+      embed: "https://our-earth.vercel.app/",
       data: "tulsi",
       url: "https://fastly.picsum.photos/id/239/200/200.jpg?hmac=8JqlXUpZ9Xy0H6tMK8sCPQAYU9vUn9Qa8Kg-U9h3sCY",
     },
     {
+      embed: "https://prime-video.vercel.app/",
       position: "second",
       data: "yakraj",
       url: "https://fastly.picsum.photos/id/976/200/200.jpg?hmac=xz9CTpScnLHQm_wNTcJmz8bQM6-ApTQnof5-4LGtu-s",
     },
     {
+      embed: "https://data-entry-app.vercel.app/",
       position: "third",
       data: "amrita",
       url: "https://fastly.picsum.photos/id/196/200/200.jpg?hmac=sQvBWK3YS9nyc8fxqMAEar9EpxOlkMcWL-VePbARdIU",
     },
     {
+      embed: "https://contact-directory.vercel.app/",
       position: "fourth",
       data: "dolma",
       url: "https://fastly.picsum.photos/id/907/200/200.jpg?hmac=SdeLZNONJ3CX-OB15hSXsCheWDC6yYac5N5VUJM7FIQ",
     },
     {
+      embed: "https://daily-expense-report.vercel.app/",
       position: "fifth",
       data: "dhanisha",
       url: "https://fastly.picsum.photos/id/779/200/200.jpg?hmac=qClHBmnKwT7Xt6flSVOh5Ax0tWLRo_gLVmwd4dkSVAo",
     },
     {
+      embed: "https://face-recognition-ruddy.vercel.app/",
       position: "sixth",
       data: "daylight",
       url: "https://fastly.picsum.photos/id/446/200/200.jpg?hmac=PkaLcCtgL4IvAz-gsxbCXz_tl0qdVUGOrxhYLrywa-c",
     },
     {
+      embed: "https://m.sunauloo.com/important-info",
       position: "hide-last",
       data: "family",
       url: "https://fastly.picsum.photos/id/1053/200/200.jpg?hmac=JOtR2adXynxSVClz0LNlPZjW0TJTRXc7c15kka2QoRk",
     },
     {
+      embed: "",
       position: "hide-last",
       data: "india",
       url: "https://fastly.picsum.photos/id/70/200/200.jpg?hmac=hRU7tEHltyLUTf0bCrAWFXlPRXOBTsvCcvL-dIUG2CE",
     },
     {
+      embed: "",
       position: "hide-last",
       data: "nepal",
       url: "https://fastly.picsum.photos/id/119/200/200.jpg?hmac=JGrHG7yCKfebsm5jJSWw7F7x2oxeYnm5YE_74PhnRME",
     },
     {
+      embed: "",
       position: "hide-last",
       data: "country",
       url: "https://fastly.picsum.photos/id/615/200/200.jpg?hmac=dtUr9nHZQ2Q9aTaRUG-DbStwQeKUNwxAXn3snkihUI4",
     },
     {
-      position: "hide-last",
+      embed: "",
       data: "hellothere",
+      position: "hide-last",
       url: "https://fastly.picsum.photos/id/229/200/200.jpg?hmac=b3V9uXS2Q1EA1tLHxvWjTgBF4TphN4ibxTjDv2PO2jg",
     },
     {
+      embed: "",
       position: "hide-last",
       data: "what",
       url: "https://fastly.picsum.photos/id/95/200/200.jpg?hmac=EFN5lZlH5NAZUP3gI_uiihIaHacpG1u4aw_KmeJgeQ0",
     },
     {
+      embed: "",
       position: "hide-last",
       data: "is",
       url: "https://fastly.picsum.photos/id/18/200/200.jpg?hmac=naWL3P7tSw9NeN2OXqD0XhBgnBko_h5B-Z3UdUVLFcU",
     },
     {
+      embed: "",
       position: "hide-last",
       data: "your",
       url: "https://fastly.picsum.photos/id/825/200/200.jpg?hmac=Rpa0BK5LjdGtlClC7IBAfyqXkR8ivGiARYDUmgpjZ3w",
     },
     {
+      embed: "",
       position: "hide-last",
       data: "name",
       url: "https://fastly.picsum.photos/id/946/200/200.jpg?hmac=a01jNqgHjp0Vj_csHXBpEttrSyo1vFrUTL1fwgKYG0Y",
@@ -174,6 +194,10 @@ export const CardaPlay = () => {
             }}
             onMouseLeave={() => {
               onmouseOver(false);
+            }}
+            onClick={() => {
+              setpopAnimation("AnimateWindow 0.8s forwards");
+              setembedURL(x.embed);
             }}
             key={x + i}
             className={"card" + " " + x.position}

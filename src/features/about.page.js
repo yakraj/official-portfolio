@@ -1,7 +1,10 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import Tilt from "react-tilt";
+import { MainContext } from "../conext/main.context";
 
 export const AboutPage = () => {
+  const { setpopAnimation } = useContext(MainContext);
+
   const imageRef = useRef(null);
   return (
     <div className="landing-firstpage">

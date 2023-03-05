@@ -1,20 +1,39 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import "../styles/contact.sec.css";
 import emailjs from "emailjs-com";
-import { AlertBox } from "./alert.box";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { MainContext } from "../conext/main.context";
 // import nodemailer from "nodemailer";
 export const ContactSec = () => {
+  const contactsec = useRef();
   const [name, onname] = useState();
   const [emailadd, onemailadd] = useState();
   const [message, onmessage] = useState();
-
+  const { setalertcolour, setalertmessage, setalertTime } =
+    useContext(MainContext);
   const templateParams = {
     name: name,
     email: emailadd,
     notes: message,
   };
+
   useEffect(() => {
-    <AlertBox message="it should work now" />;
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: contactsec.current,
+        start: `center bottom`,
+        end: `+=${window.innerHeight / 4}`,
+        // markers: true,
+        scrub: 1,
+      },
+    });
+    tl.to(contactsec.current, {
+      // background: "red",
+      opacity: 1,
+      // zIndex: 5000,
+    });
+    // <AlertBox message="it should work now" />;
   }, []);
   const SendNow = () => {
     if (name && message && emailadd.includes("@") && emailadd.includes(".")) {
@@ -31,19 +50,28 @@ export const ContactSec = () => {
             onname("");
             onemailadd("");
             onmessage("");
+            setalertcolour("green");
+            setalertTime(new Date());
+            setalertmessage("Thanks ...! Your message successfully sent.");
           },
           (err) => {
-            console.log("FAILED...", err);
+            setalertcolour("red");
+            setalertTime(new Date());
+            setalertmessage(
+              "Sorry for unconvinence, We been unable to process your message"
+            );
           }
         );
     } else {
-      window.alert("Please fill valied fields");
+      setalertTime(new Date());
+      setalertcolour("red");
+      setalertmessage("Please Fill required fields with valid data");
     }
   };
 
   return (
     <>
-      <div id="contact-section">
+      <div ref={contactsec} id="contact-section">
         <h1>Contact Me</h1>
 
         <div className="contact-lists">

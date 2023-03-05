@@ -33,15 +33,6 @@
   transition: all 0.1s ease-in-out !important;
 }
 
-.card::after {
-  content: "";
-  z-index: -1;
-  opacity: 0.4;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background: orange;
-}
 .card::before {
   content: "";
   position: absolute;

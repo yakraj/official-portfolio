@@ -1,27 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kumar+One+Outline&display=swap");
 .embed-window {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   position: fixed;
+  flex-direction: column;
   overflow: hidden;
   background: #dadada;
-  z-index: 1000;
+  z-index: 999999;
   box-sizing: border-box;
   border: 1px solid #000;
   border-radius: 20px 20px 0 0;
-  /* animation: AnimateWindow 0.3s forwards; */
+  /* animation: AnimateWindow 0.8s forwards; */
+}
+
+.info-website-window {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: fixed;
+  flex-direction: column;
+  overflow: hidden;
+  background: #dadada;
+  z-index: 99999;
+  box-sizing: border-box;
+  border: 1px solid #000;
+  border-radius: 20px 20px 0 0;
+  /* animation: AnimateWindow 0.8s forwards; */
 }
 
 @keyframes AnimateWindow {
-  from {
+  0% {
     top: 100vh;
     height: 0px;
     width: 0px;
+    clip-path: polygon(0 0, 100% 0, 52% 23%, 52% 22%);
   }
-  to {
+  50% {
+    /* top: 100vh;
+    height: 0px;
+    width: 0px; */
+    clip-path: polygon(0 0, 100% 0, 51% 100%, 50% 100%);
+  }
+  100% {
     height: 100vh;
     width: 100%;
     top: 10px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+@keyframes AnimateWindowClose {
+  0% {
+    height: 100vh;
+    width: 100%;
+    top: 10px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  50% {
+    top: 100vh;
+    height: 0px;
+    width: 0px;
+    clip-path: polygon(0 0, 100% 0, 51% 100%, 50% 100%);
+  }
+  100% {
+    top: 100vh;
+    height: 0px;
+    width: 0px;
+    clip-path: polygon(0 0, 100% 0, 52% 23%, 52% 22%);
   }
 }
 
@@ -46,6 +95,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  right: 2%;
   background-color: red;
   border-radius: 50%;
   cursor: pointer;
@@ -71,4 +121,143 @@
   position: absolute;
   transform: rotate(45deg);
   background-color: #fff;
+}
+
+.rest-website-embed,
+iframe {
+  height: 100%;
+  width: 100%;
+}
+
+/* THIS CSS FOR WEBSITE EMBED */
+.rest-website-embed .main-container {
+  height: 100vh;
+  width: 100%;
+  /* backdrop-filter: invert(1); */
+  overflow-y: scroll;
+  /* background-image: url('https://cdn.pixabay.com/photo/2022/06/12/22/48/gradient-7258997_960_720.png'); */
+  background-color: skyblue;
+  background-size: cover;
+  background: linear-gradient(
+      134deg,
+      transparent -38%,
+      #9ce 70%,
+      #9c0 110%,
+      red 55%
+    ),
+    #446;
+  /* background-size: 16px 48px; */
+}
+.images-container {
+  border: 1px solid grey;
+  border-radius: 15px;
+  overflow: hidden;
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-info-container .title-left-side strong {
+  font-family: "Oleo Script", cursive;
+}
+.single-image {
+  height: auto;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.single-image img {
+  margin-top: 5px;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100vh;
+}
+
+.technologies-container strong {
+  font-family: cursive;
+  font-weight: bold;
+  text-shadow: 3px 6px grey, 1px 2px 2px grey, 2px 4px 4px grey,
+    3px 6px 6px grey;
+  color: #763399;
+  margin: 10px;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.technologies {
+  display: flex;
+  font-family: "Shrikhand", cursive;
+  font-weight: 100;
+  margin: 0;
+}
+
+.technologies p {
+  margin: 5px;
+  text-shadow: 2px 2px #000, 2px 2px 2px #000, 2px 2px 4px #000;
+  text-align: left;
+}
+
+.technologies-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.info-description-container {
+  font-family: "Great Vibes", cursive;
+  font-size: 2.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  /* width: 70%; */
+  padding: 0 12%;
+  box-sizing: border-box;
+  text-align: center;
+  color: rebeccapurple;
+  text-shadow: 0 0 1px #000, 0 0 5px #fff, 0 0 10px #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.top-info-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.title-left-side {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.title-left-side strong {
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-right: 5px;
+  font-size: 4rem;
+}
+
+.title-left-side p {
+  font-family: "Kumar One Outline", cursive;
+  font-size: 1.5rem;
+  font-weight: 200;
+  margin-bottom: 15px;
+}
+
+.title-right-side {
+  font-family: sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+img {
+  width: 100%;
+  margin-top: 5px;
 }

@@ -111,7 +111,7 @@ export const FirstLanding = () => {
       ball.appendChild(insidetext);
       /* give it two second of settimeout and take it to random place of window horizontally and vertically */
       setTimeout(function () {
-        ball.style.left = Math.random() * window.innerWidth + "px";
+        ball.style.left = Math.random() * window.innerWidth - 105 + "px";
         ball.style.top = Math.random() * window.innerHeight + "px";
       }, 2000);
 
@@ -238,13 +238,7 @@ export const FirstLanding = () => {
   return (
     <div ref={appbody} className="firstlanding-page">
       <h1 className="freelancer-text">FREELANCER.</h1>
-      <div
-        ref={DomHouse}
-        onresize={() => {
-          console.log("resized");
-        }}
-        className="ImageDome"
-      >
+      <div ref={DomHouse} className="ImageDome">
         {objects.map((x) => {
           return (
             <div className="dome-brick-layer">
