@@ -5,7 +5,8 @@ import { MainContext } from "../conext/main.context";
 import "../styles/small.cards.css";
 import { SocialMedia } from "./social-media";
 export const CardaPlay = () => {
-  const { setpopAnimation, setembedURL } = useContext(MainContext);
+  const { setpopAnimation, setembedURL, setpopSProjects } =
+    useContext(MainContext);
 
   useEffect(() => {}, []);
   const [dynamicClass, ondynamicClass] = useState([
@@ -182,6 +183,36 @@ export const CardaPlay = () => {
 
   return (
     <div className="second-page">
+      <div
+        style={{
+          cursor: "pointer",
+          display: "flex",
+          justifyContent: "center",
+          paddingRight: "20%",
+          boxSizing: "border-box",
+          alignItems: "start",
+          height: "100vh",
+          backgroundPosition: "right center",
+          backgroundSize: "70%",
+          backgroundRepeat: "no-repeat",
+          backgroundColor: "#198f9c",
+          width: "100%",
+          paddingTop: "5%",
+
+          boxSizing: "border-box",
+          backgroundImage: `url(${require("../assets/sprojects.webp")})`,
+        }}
+        className="show-more-work"
+      >
+        <div
+          style={{ position: "relative", zIndex: 100, marginLeft: "15%" }}
+          onClick={() => {
+            setpopSProjects("AnimateWindow 1s forwards");
+          }}
+        >
+          All Projects
+        </div>
+      </div>
       {dynamicClass.map((x, i) => {
         return (
           <div

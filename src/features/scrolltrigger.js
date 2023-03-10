@@ -1,11 +1,13 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
+import { MainContext } from "../conext/main.context";
 import { SingleSlide } from "./portfolio.single.slide";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const ScrollTriggerTrial = () => {
+  const { setpopmoreWork } = useContext(MainContext);
   const fCon = useRef(null);
   const sCon = useRef(null);
   const tCon = useRef(null);
@@ -57,7 +59,7 @@ export const ScrollTriggerTrial = () => {
       }).to(data, {
         duration: 0.1,
         opacity: 0,
-        zIndex: 0,
+        zIndex: -1,
         // background: "blue",
         display: "none",
       });
@@ -80,7 +82,7 @@ export const ScrollTriggerTrial = () => {
       //       gsap.to(data, {
       //         duration: 0.1,
       //         opacity: 0,
-      //         zIndex: 0,
+      //         zIndex: 0,p
       //         snap: {
       //           snapTo: "labels", // snap to the closest label in the timeline
       //           duration: { min: 0.2, max: 3 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
@@ -108,7 +110,13 @@ export const ScrollTriggerTrial = () => {
         </div>
         <div ref={foCon} className="fourth-container container">
           <div className="show-more-work">
-            <div>Explore More</div>
+            <div
+              onClick={() => {
+                setpopmoreWork("AnimateWindow 1s forwards");
+              }}
+            >
+              Explore More
+            </div>
           </div>
         </div>
       </div>

@@ -68,30 +68,35 @@ export const WebsiteInfo = (url) => {
                       </a>
                     </div>
                   </div>
-                  <div class="info-description-container">
-                    a unique type of website that can be achieved for anything
-                    to get done, this can be usd for industrial usages and a
-                    unique type of website that can be achieved for anything to
-                    get done, this can be usd for industrial usages and a unique
-                    type of website that can be achieved for anything to get
-                    done, this can be usd for industrial usages and a unique
-                    type of website that can be achieved for anything to get
-                    done, this can be usd for industrial usages and
-                  </div>
-                </div>
-                <div class="technologies-container">
-                  <strong>Technologies Used</strong>
-                  <div class="technologies">
-                    <p>React</p>
-                  </div>
-                  <div class="technologies">
-                    <p>Node js</p>
-                  </div>
-                  <div class="technologies">
-                    <p>Express Js</p>
-                  </div>
-                  <div class="technologies">
-                    <p>Postgres SQL</p>
+                  <div style={{ display: "flex", justifyContent: "center" }}>
+                    <div className="two-type-parent">
+                      <div class="info-description-container">
+                        a unique type of website that can be achieved for
+                        anything to get done, this can be usd for industrial
+                        usages and a unique type of website that can be achieved
+                        for anything to get done, this can be usd for industrial
+                        usages and a unique type of website that can be achieved
+                        for anything to get done, this can be usd for industrial
+                        usages and a unique type of website that can be achieved
+                        for anything to get done, this can be usd for industrial
+                        usages and
+                      </div>
+                      <div class="technologies-container">
+                        <strong>Technologies Used</strong>
+                        <div class="technologies">
+                          <p>React</p>
+                        </div>
+                        <div class="technologies">
+                          <p>Node js</p>
+                        </div>
+                        <div class="technologies">
+                          <p>Express Js</p>
+                        </div>
+                        <div class="technologies">
+                          <p>Postgres SQL</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

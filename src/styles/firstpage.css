@@ -169,4 +169,15 @@
   align-items: center;
 }
 
-/* dummy is here */
+/* this is for playlable fonts */
+.first-landing-absolute {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: blue;
+  position: absolute;
+  top: 0;
+  left: 0;
+}

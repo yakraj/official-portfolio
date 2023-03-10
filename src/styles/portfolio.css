@@ -350,6 +350,8 @@ this is dummy page
   width: 100%;
   opacity: 0;
   position: fixed;
+  opacity: 0;
+  z-index: -1;
   left: 0;
   top: 0;
   background-attachment: fixed;
@@ -375,10 +377,11 @@ this is dummy page
 }
 
 .show-more-work {
+  cursor: pointer;
   display: flex;
   justify-content: flex-end;
   padding-right: 20%;
-  background-image: url(http://localhost:3000/static/media/more-work.b33fe57eaed62e258db4.webp);
+  background-image: url("../assets/more-work.webp");
   box-sizing: border-box;
   align-items: center;
   height: 100vh;

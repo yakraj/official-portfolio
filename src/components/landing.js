@@ -12,11 +12,15 @@ import { AboutPage } from "../features/about.page";
 import { ScrollTriggerTrial } from "../features/scrolltrigger";
 import { AlertBox } from "../features/alert.box";
 import { WebsiteInfo } from "../features/website.images";
+import { MoreWork } from "../features/more.work";
+import { SmallProjects } from "../features/small.projects";
 
 export const Landing = () => {
   return (
     <>
       <EmbedWebsite />
+      <MoreWork />
+      <SmallProjects />
       <WebsiteInfo />
       <FirstLanding />
       <AboutPage />

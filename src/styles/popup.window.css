@@ -182,14 +182,16 @@ iframe {
 }
 
 .technologies-container strong {
-  font-family: cursive;
+  font-family: sans-serif;
   font-weight: bold;
   text-shadow: 3px 6px grey, 1px 2px 2px grey, 2px 4px 4px grey,
     3px 6px 6px grey;
   color: #763399;
   margin: 10px;
-  font-size: 3rem;
+  font-size: 2rem;
   text-transform: uppercase;
+  text-align: left;
+  width: 100%;
 }
 
 .technologies {
@@ -208,8 +210,29 @@ iframe {
 .technologies-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  width: 400%;
   flex-direction: column;
+  padding-left: 30px;
+  margin-left: 30px;
+  border-left: 7px solid grey;
+  border-radius: 15px;
+}
+.two-type-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 30px;
+  box-sizing: border-box;
+  /* border: 1px solid; */
+  width: 60%;
+  border-radius: 20px;
+  -webkit-border-radius: 22px;
+  border-radius: 22px;
+  background: #93c3e5;
+  -webkit-box-shadow: 6px 6px 23px #3b4e5c, -6px -6px 23px #ebffff;
+  box-shadow: 6px 6px 23px #3b4e5c, -6px -6px 23px #ebffff;
 }
 
 .info-description-container {
@@ -218,7 +241,6 @@ iframe {
   font-weight: 500;
   letter-spacing: 1px;
   /* width: 70%; */
-  padding: 0 12%;
   box-sizing: border-box;
   text-align: center;
   color: rebeccapurple;
@@ -260,4 +282,217 @@ iframe {
 img {
   width: 100%;
   margin-top: 5px;
+}
+
+/* cards css */
+
+.full-items-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+}
+
+.component-card {
+  height: 300px;
+  width: 210px;
+  margin: 10px;
+  background: #e7e7e7;
+  /* background-image: url("./image1.png"); */
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: cursive;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 0px 0px 5px antiquewhite, 0px 0px 5px #000;
+  position: relative;
+  z-index: 2;
+  background-size: cover;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  background-position: center;
+  transition: all 0.3s ease-in-out;
+  animation: Animate 5s infinite;
+  font-size: 1rem;
+  /* box-shadow: 0px 0px 10px red; */
+}
+
+.component-card:hover {
+  animation: none;
+  box-shadow: 0px 0px 1px grey, 0px 0px 5px grey, 0px 0px 7px grey,
+    0px 0px 10px grey, 0px 0px 12px grey, inset 0px 0px 3px #fff,
+    inset 0px 0px 10px #fff;
+}
+
+.component-card h3 {
+  opacity: 0;
+  /* transition-delay: 0.3s !important; */
+  transition: all 0.5s ease-in-out;
+  transform: matrix3d(1, 0, 10, 0, 0, 1, 1, 20, 5, 3, 4, 3, 3, 0, 0, 1);
+  text-align: center;
+}
+
+.component-card:hover h3 {
+  opacity: 1;
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+}
+
+.component-card:hover:before {
+  content: "";
+  height: 284px;
+  z-index: -1;
+  width: 367px;
+  background: #4ff2ffad;
+  position: absolute;
+  top: -17px;
+  border-radius: 50%;
+}
+
+.component-card::before {
+  content: "";
+  height: 0px;
+  z-index: -1;
+  width: 0px;
+  position: absolute;
+  top: -17px;
+  border-radius: 50%;
+  transition: all 0.5s ease-in-out;
+}
+
+.component-card:hover:after {
+  content: attr(message);
+  height: 200px;
+  z-index: -1;
+  width: 100%;
+  background: mediumseagreen;
+  position: absolute;
+  bottom: -100px;
+  transform: skew(0deg, -22deg);
+}
+
+.component-card::after {
+  content: attr(message);
+  height: 200px;
+  z-index: -1;
+  width: 100%;
+  background: mediumseagreen;
+  position: absolute;
+  bottom: -250px;
+  transform: skew(0deg, -22deg);
+  transition: all 0.3s ease-in-out;
+  transition-delay: 0.3s;
+  text-align: center;
+  font-size: 1rem;
+}
+
+@keyframes Animate {
+  0% {
+    box-shadow: 0px 0px 10px red;
+  }
+  50% {
+    box-shadow: 0px 0px 10px green;
+  }
+  95% {
+    box-shadow: 0px 0px 10px blue;
+  }
+  100% {
+    box-shadow: 0px 0px 10px red;
+  }
+}
+
+/* this css for all works  */
+
+.doddle-container .right-doddle-ear:hover,
+.doddle-container .left-doddle-ear:hover {
+  font-size: 1rem;
+}
+.doddle-container .left-doddle-ear {
+  height: 35%;
+  width: 35%;
+  background: #3fff00;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  top: 30%;
+  font-size: 0.7rem;
+  left: 30%;
+  box-shadow: inset 0px 0px 4px #fff, inset 0px 0px 7px #fff,
+    inset 0px 0px 10px #fff, inset 1px 1px 15px green;
+  transition: all 0.5s ease-in-out;
+}
+
+.doddle-container .right-doddle-ear {
+  height: 35%;
+  width: 35%;
+  font-size: 0.7rem;
+  background: #3300ff;
+  border-radius: 50%;
+  position: absolute;
+  top: 30%;
+  z-index: 1;
+  right: 30%;
+  box-shadow: inset 0px 0px 4px #fff, inset 0px 0px 7px #fff,
+    inset 0px 0px 10px #fff, inset 1px 1px 15px green;
+  transition: all 0.5s ease-in-out;
+}
+
+.doddle-container .center-doddle {
+  height: 80%;
+  width: 80%;
+  background: red;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+.doddle-container .center-doddle::after {
+  content: "";
+  opacity: 0;
+  transition: all 0.3s;
+}
+.doddle-container .center-doddle:hover::after {
+  content: "";
+  height: 100px;
+  width: 120px;
+  /* background: blue; */
+  border-bottom: 20px solid pink;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 10%;
+  opacity: 1;
+}
+
+.doddle-container {
+  height: 300px;
+  width: 300px;
+  /* border: 1px solid grey; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.doddle-container div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.doddle-container:hover .left-doddle-ear {
+  left: 0;
+  top: 0;
+}
+
+.doddle-container:hover .right-doddle-ear {
+  right: 0;
+  top: 0;
 }

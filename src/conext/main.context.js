@@ -9,6 +9,8 @@ export const WebContext = ({ children }) => {
   const [alertTime, setalertTime] = useState("");
   const [embedURL, setembedURL] = useState("");
   const [popWindowInfo, setpopWindowInfo] = useState("");
+  const [popmoreWork, setpopmoreWork] = useState("");
+  const [popSProjects, setpopSProjects] = useState("");
 
   return (
     <MainContext.Provider
@@ -25,6 +27,10 @@ export const WebContext = ({ children }) => {
         setembedURL,
         popWindowInfo,
         setpopWindowInfo,
+        popmoreWork,
+        setpopmoreWork,
+        popSProjects,
+        setpopSProjects,
       }}
     >
       {children}
