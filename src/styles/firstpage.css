@@ -34,6 +34,9 @@
     height: 100vh;
     padding-bottom: 0;
   }
+  .freelancer-text {
+    font-size: 2rem !important;
+  }
 }
 .ImageDome {
   position: fixed;
