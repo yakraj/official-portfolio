@@ -19,9 +19,11 @@ export const SmallProjects = (url) => {
     setTimeout(() => {
       onisloading(false);
     }, 2000);
+
     // browserWin.current.style.animation = "AnimateWindow 1s forwards";
     // browserWin.current.style.animation = "AnimateWindowClose 1s forwards";
   }, [popSProjects]);
+
   const mapp = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7,
     8, 9,

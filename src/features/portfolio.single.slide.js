@@ -48,6 +48,9 @@ export const SingleSlide = () => {
           </div>
           <hr style={{ width: "70%", height: "2px" }} /> */}
           <h1 className="gallerytext">Gallery</h1>
+          <div class="gallery-more-button">
+            <div> More</div>
+          </div>
           <div className="images-slide">
             <div
               onClick={() => {

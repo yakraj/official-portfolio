@@ -1,3 +1,13 @@
+@media screen and (max-width: 800px) {
+  .landing-firstpage p span {
+    font-size: 1.5rem;
+  }
+  .social-media-icons a .media-icon {
+    height: 50px;
+    width: 50px;
+  }
+}
+
 .landing-firstpage {
   height: 100vh;
   width: 100%;

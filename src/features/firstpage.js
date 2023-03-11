@@ -3,6 +3,8 @@ import "../styles/firstpage.css";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 export const FirstLanding = () => {
+  const wHeight = window.innerHeight;
+  const wWidth = window.innerWidth;
   const [dynamicClass, ondynamicClass] = useState([
     {
       position: "language-second",
@@ -136,9 +138,12 @@ export const FirstLanding = () => {
     }, 2000);
   };
   useEffect(() => {
-    CreateBall();
-    CreateBall();
-    CreateBall();
+    if (wWidth > 800) {
+      CreateBall();
+      CreateBall();
+      CreateBall();
+    }
+    return;
   }, []);
 
   useEffect(() => {
@@ -159,8 +164,8 @@ export const FirstLanding = () => {
     // clean up the observer when the component unmounts
     return () => observer.disconnect();
   }, []);
+  gsap.registerPlugin(ScrollTrigger);
   useEffect(() => {
-    const wHeight = window.innerHeight;
     var firstEnd = wHeight * (215 / 100);
     var secondStart = wHeight * (144 / 100);
     var secondEnd = wHeight * (72 / 100);
@@ -169,64 +174,66 @@ export const FirstLanding = () => {
 
     gsap.set(DomHouse.current, { opacity: 1 }); // set opacity to 1 when entering viewport)
     // let tl = gsap.timeline();
-    gsap.registerPlugin(ScrollTrigger);
     // this is for first trigger
-    gsap.to([DomHouse.current, DomeDoor.current, youtubeIntro.current], {
-      scrollTrigger: {
-        trigger: DomHouse.current,
-        start: "bottom bottom",
-        end: `+=${firstEnd}`,
-        scrub: 1,
-      },
-
-      fontWeight: "bold",
-      width: gsap.utils.wrap(["400vw", "26%", "30%"]),
-      height: gsap.utils.wrap(["400vw", "44%", "10%"]),
-      left: gsap.utils.wrap(["", "37%", "42%"]),
-      borderTop: gsap.utils.wrap(["", "22px solid #4c4c4c", ""]),
-      borderLeft: gsap.utils.wrap(["", "22px solid #959595", ""]),
-      borderRight: gsap.utils.wrap(["", "22px solid #959595", ""]),
-    });
-    gsap.to(withcomputer.current, {
-      scrollTrigger: {
-        trigger: withcomputer.current,
-        // toggleActions: "restart pause reverse pause",
-        start: `${secondStart} bottom`,
-        end: `+=${secondEnd}`,
-        scrub: 1,
-        startAt: {
+    wWidth > 800 &&
+      gsap.to([DomHouse.current, DomeDoor.current, youtubeIntro.current], {
+        scrollTrigger: {
           trigger: DomHouse.current,
-          start: "bottom bottom+=200",
-        },
-      },
-      opacity: 1,
-    });
-    gsap.to(DomHouse.current, {
-      scrollTrigger: {
-        trigger: DomHouse.current,
-        start: `${thirdStart} top`,
-        end: `+=${thirdEnd} top`,
-        scrub: 1,
-      },
-      filter: "brightness(0)",
-      opacity: 0,
-      display: "none",
-      onComplete: function () {
-        // Add new scrollTrigger for scrolling upwards
-        ScrollTrigger.create({
-          trigger: DomHouse.current,
-          start: "bottom top", // set to bottom of viewport
-          end: "bottom bottom", // set to top of viewport
+          start: "bottom bottom",
+          end: `+=${firstEnd}`,
           scrub: 1,
-          onEnter: function () {
-            gsap.set(DomHouse.current, { opacity: 1 }); // set opacity to 1 when entering viewport
+        },
+
+        fontWeight: "bold",
+        width: gsap.utils.wrap(["400vw", "26%", "30%"]),
+        height: gsap.utils.wrap(["400vw", "44%", "10%"]),
+        left: gsap.utils.wrap(["", "37%", "42%"]),
+        borderTop: gsap.utils.wrap(["", "22px solid #4c4c4c", ""]),
+        borderLeft: gsap.utils.wrap(["", "22px solid #959595", ""]),
+        borderRight: gsap.utils.wrap(["", "22px solid #959595", ""]),
+      });
+    wWidth > 800 &&
+      gsap.to(withcomputer.current, {
+        scrollTrigger: {
+          trigger: withcomputer.current,
+          // toggleActions: "restart pause reverse pause",
+          start: `${secondStart} bottom`,
+          end: `+=${secondEnd - 100}`,
+          scrub: 1,
+          startAt: {
+            trigger: DomHouse.current,
+            start: "bottom bottom+=200",
           },
-          onLeave: function () {
-            gsap.set(DomHouse.current, { opacity: 0 }); // set opacity to 0 when leaving viewport
-          },
-        });
-      },
-    });
+        },
+        opacity: 1,
+      });
+    wWidth > 800 &&
+      gsap.to(DomHouse.current, {
+        scrollTrigger: {
+          trigger: DomHouse.current,
+          start: `${thirdStart} top`,
+          end: `+=${thirdEnd} top`,
+          scrub: 1,
+        },
+        filter: "brightness(0)",
+        opacity: 0,
+        display: "none",
+        onComplete: function () {
+          // Add new scrollTrigger for scrolling upwards
+          ScrollTrigger.create({
+            trigger: DomHouse.current,
+            start: "bottom top", // set to bottom of viewport
+            end: "bottom bottom", // set to top of viewport
+            scrub: 1,
+            onEnter: function () {
+              gsap.set(DomHouse.current, { opacity: 1 }); // set opacity to 1 when entering viewport
+            },
+            onLeave: function () {
+              gsap.set(DomHouse.current, { opacity: 0 }); // set opacity to 0 when leaving viewport
+            },
+          });
+        },
+      });
   }, []);
 
   var objects = [
@@ -314,7 +321,15 @@ export const FirstLanding = () => {
           alt="standing"
           src={require("../assets/yakraj standing.webp")}
         />
-        <div ref={youtubeIntro} className="yakraj-intro-youtube"></div>
+        <div
+          onClick={() => {
+            window.location.href = "./video";
+          }}
+          ref={youtubeIntro}
+          className="yakraj-intro-youtube"
+        >
+          <img alt="youtube-logo" src={require("../assets/play.png")} />
+        </div>
       </div>
       <div className="freelancer-dot"></div>
     </div>

@@ -220,6 +220,7 @@ iframe {
 }
 .two-type-parent {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   padding: 20px;
@@ -238,6 +239,7 @@ iframe {
 .info-description-container {
   font-family: "Great Vibes", cursive;
   font-size: 2.2rem;
+  min-width: 450px;
   font-weight: 500;
   letter-spacing: 1px;
   /* width: 70%; */

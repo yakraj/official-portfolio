@@ -3,7 +3,7 @@
   width: 100%;
   overflow: hidden;
   /* position: relative; */
-  background: pink;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -24,6 +24,16 @@
   -webkit-text-stroke-width: thin;
   /* font: message-box; */
   -webkit-box-reflect: below -20px linear-gradient(transparent, rgb(0 0 0 / 24%));
+}
+
+@media screen and (max-width: 800px) {
+  .ImageDome {
+    display: none;
+  }
+  .firstlanding-page {
+    height: 100vh;
+    padding-bottom: 0;
+  }
 }
 .ImageDome {
   position: fixed;
@@ -155,9 +165,12 @@
 .yakraj-intro-youtube {
   height: 9%;
   width: 5.5%;
-  background: url("https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/118596058/original/241cc44f7ea8e1b043df8e735c8fdea0975bcb1d/design-catchy-youtube-thumbnail.jpg");
-  background-size: cover;
+  background: url("../assets/my-portfolio.webp");
+  background-size: contain;
   position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #db7a0b;
   left: 54%;
   bottom: 24%;
   border-radius: 29px;
@@ -168,6 +181,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.yakraj-intro-youtube img {
+  width: 20%;
+  transition-duration: 0.2s;
+}
+.yakraj-intro-youtube:hover img {
+  width: 25%;
+  opacity: 0.7;
 }
 
 /* this is for playlable fonts */

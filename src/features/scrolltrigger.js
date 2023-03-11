@@ -54,8 +54,9 @@ export const ScrollTriggerTrial = () => {
       });
       tl.to(data, {
         // background: "red",
+        display: "flex",
         opacity: 1,
-        zIndex: 5000,
+        zIndex: 50,
       }).to(data, {
         duration: 0.1,
         opacity: 0,
