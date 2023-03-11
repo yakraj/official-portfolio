@@ -102,7 +102,7 @@ export const WebsiteInfo = (url) => {
               </div>
               <div class="images-container">
                 <div class="single-image">
-                  <img src={require("../assets/app.png")} alt="all via" />
+                  {/* <img src={require("../assets/app.png")} alt="all via" />
                   <img
                     src={require("../assets/background.png")}
                     alt="all via"
@@ -113,7 +113,7 @@ export const WebsiteInfo = (url) => {
                     alt="all via"
                   />
                   <img src={require("../assets/mobile.png")} alt="all via" />
-                  <img src={require("../assets/app.png")} alt="all via" />
+                  <img src={require("../assets/app.png")} alt="all via" /> */}
                 </div>
               </div>
             </>
