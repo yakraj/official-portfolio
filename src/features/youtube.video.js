@@ -16,9 +16,9 @@ export const YoutubeVideo = () => {
         height="720"
         src="https://www.youtube.com/embed/YVL_VMf8QL8"
         title="Yakraj Pariyar Portfolio||Creative1"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
+        allowFullScreen
       ></iframe>
     </div>
   );

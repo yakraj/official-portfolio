@@ -6,11 +6,18 @@ import React, {
   useState,
 } from "react";
 import { Loader } from "../components/loader";
+import { Loading } from "../components/loading.gif";
 import { MainContext } from "../conext/main.context";
 import "../styles/popup.window.css";
 export const SmallProjects = (url) => {
   const browserWin = useRef(null);
-  const { popSProjects, setpopSProjects, embedURL } = useContext(MainContext);
+  const {
+    popSProjects,
+    setpopSProjects,
+    embedURL,
+    SmallProjects,
+    isLoadingSmall,
+  } = useContext(MainContext);
   const [isloading, onisloading] = useState(false);
 
   useEffect(() => {
@@ -53,13 +60,17 @@ export const SmallProjects = (url) => {
         <Loader />
       ) : (
         <div className="rest-website-embed full-items-container">
-          {mapp.map(() => {
-            return (
-              <div class="component-card" message="Micro Hardness Tester">
-                <h3>card component</h3>
-              </div>
-            );
-          })}
+          {isLoadingSmall ? (
+            <Loading />
+          ) : (
+            SmallProjects.map(() => {
+              return (
+                <div class="component-card" message="Micro Hardness Tester">
+                  <h3>card component</h3>
+                </div>
+              );
+            })
+          )}
         </div>
       )}
     </div>

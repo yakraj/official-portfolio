@@ -1,4 +1,5 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { AqMegaProjects, AqSmallProjects } from "./main.services";
 
 export const MainContext = React.createContext();
 
@@ -11,7 +12,22 @@ export const WebContext = ({ children }) => {
   const [popWindowInfo, setpopWindowInfo] = useState("");
   const [popmoreWork, setpopmoreWork] = useState("");
   const [popSProjects, setpopSProjects] = useState("");
+  const [SmallProjects, setSmallProjects] = useState([]);
+  const [MegaProjects, setMegaProjects] = useState([]);
+  const [isLoadingSmall, setisLoadingSmall] = useState(true);
+  const [isLoadingMega, setisLoadingMega] = useState(true);
 
+  const GetSmallProjects = () => {
+    AqSmallProjects(isLoadingSmall, SmallProjects);
+  };
+  const GetMegaProjects = () => {
+    AqMegaProjects(isLoadingMega, MegaProjects);
+  };
+  useEffect(() => {
+    GetSmallProjects();
+    GetMegaProjects();
+  }, []);
+  console.log(MegaProjects, SmallProjects);
   return (
     <MainContext.Provider
       value={{
@@ -31,6 +47,10 @@ export const WebContext = ({ children }) => {
         setpopmoreWork,
         popSProjects,
         setpopSProjects,
+        SmallProjects,
+        MegaProjects,
+        isLoadingSmall,
+        isLoadingMega,
       }}
     >
       {children}

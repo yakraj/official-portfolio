@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "../styles/firstpage.css";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { Helmet } from "react-helmet";
 export const FirstLanding = () => {
   const wHeight = window.innerHeight;
   const wWidth = window.innerWidth;
@@ -198,7 +199,7 @@ export const FirstLanding = () => {
           trigger: withcomputer.current,
           // toggleActions: "restart pause reverse pause",
           start: `${secondStart} bottom`,
-          end: `+=${secondEnd - 100}`,
+          end: `+=${secondEnd - 400}`,
           scrub: 1,
           startAt: {
             trigger: DomHouse.current,

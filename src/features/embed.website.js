@@ -8,7 +8,8 @@ import React, {
 import { Loader } from "../components/loader";
 import { MainContext } from "../conext/main.context";
 import "../styles/popup.window.css";
-export const EmbedWebsite = (url) => {
+import { Helmet } from "react-helmet";
+export const EmbedWebsite = (url, title, description) => {
   const browserWin = useRef(null);
   const { popAnimation, setpopAnimation, embedURL } = useContext(MainContext);
   const [isloading, onisloading] = useState(false);
@@ -25,6 +26,12 @@ export const EmbedWebsite = (url) => {
 
   return (
     <div ref={browserWin} className="embed-window">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{`${title}`}</title>
+        <link rel="canonical" href={url} />
+        <meta name="description" content={description} />
+      </Helmet>
       <div className="embed-nav-window">
         <input
           value={embedURL}

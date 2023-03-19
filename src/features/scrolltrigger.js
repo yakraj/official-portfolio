@@ -16,22 +16,6 @@ export const ScrollTriggerTrial = () => {
   const siCon = useRef(null);
   const fullContainer = useRef(null);
 
-  // gsap.to(fCon.current, {
-  //   scrollTrigger: {
-  //     trigger: fCon.current,
-  //     start: `${window.innerHeight} center`,
-  //     markers: true,
-  //     end: `+=${window.innerHeight + window.innerHeight / 2}`,
-  //     scrub: 1,
-  //   },
-  //   background: "red",
-  //   onComplete: function () {
-  //     // gsap.to(fCon.current, { opacity: 0 });
-  //   },
-  // });
-
-  useEffect(() => {}, []);
-
   useEffect(() => {
     var addtop = fullContainer.current.offsetTop;
     // console.log();
@@ -64,50 +48,23 @@ export const ScrollTriggerTrial = () => {
         // background: "blue",
         display: "none",
       });
-
-      //   console.log(data, "data");
-      //   gsap.to(data, {
-      //     scrollTrigger: {
-      //       trigger: data,
-      //       start: `${
-      //         (window.innerHeight / 2) * index + window.innerHeight / 2
-      //       } top`,
-      //       markers: true,
-      //       end: `+=${window.innerHeight / 2}`,
-      //       scrub: 1,
-      //     },
-      //     background: "red",
-      //     opacity: 1,
-      //     zIndex: 5000,
-      //     onComplete: function () {
-      //       gsap.to(data, {
-      //         duration: 0.1,
-      //         opacity: 0,
-      //         zIndex: 0,p
-      //         snap: {
-      //           snapTo: "labels", // snap to the closest label in the timeline
-      //           duration: { min: 0.2, max: 3 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
-      //           delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
-      //           ease: "power1.inOut", // the ease of the snap animation ("power3" by default)
-      //         },
-      //         background: "blue",
-      //       });
-      //     },
-      //   });
     });
   }, []);
+
+  const { isLoadingMega, MegaProjects } = useContext(MainContext);
+  console.log(isLoadingMega, MegaProjects);
 
   return (
     <>
       <div ref={fullContainer} className="full-container">
         <div ref={fCon} className="first-container container">
-          <SingleSlide />
+          <SingleSlide data={MegaProjects.length ? MegaProjects[0] : null} />
         </div>
         <div ref={sCon} className="second-container container">
-          <SingleSlide />
+          <SingleSlide data={MegaProjects.length ? MegaProjects[1] : null} />
         </div>
         <div ref={tCon} className="third-container container">
-          <SingleSlide />
+          <SingleSlide data={MegaProjects.length ? MegaProjects[2] : null} />
         </div>
         <div ref={foCon} className="fourth-container container">
           <div className="show-more-work">

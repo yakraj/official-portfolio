@@ -1,6 +1,7 @@
 import React, { useContext, useRef } from "react";
 import Tilt from "react-tilt";
 import { MainContext } from "../conext/main.context";
+import { Helmet } from "react-helmet";
 
 export const AboutPage = () => {
   const { setpopAnimation } = useContext(MainContext);
@@ -8,6 +9,10 @@ export const AboutPage = () => {
   const imageRef = useRef(null);
   return (
     <div className="landing-firstpage">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <link rel="canonical" href="http://yakraj.com/" />
+      </Helmet>
       <p>
         I<span>create</span>
         things and

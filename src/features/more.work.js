@@ -6,11 +6,13 @@ import React, {
   useState,
 } from "react";
 import { Loader } from "../components/loader";
+import { Loading } from "../components/loading.gif";
 import { MainContext } from "../conext/main.context";
 import "../styles/popup.window.css";
 export const MoreWork = (url) => {
   const browserWin = useRef(null);
-  const { popmoreWork, setpopmoreWork, embedURL } = useContext(MainContext);
+  const { popmoreWork, setpopmoreWork, embedURL, MegaProjects, isLoadingMega } =
+    useContext(MainContext);
   const [isloading, onisloading] = useState(false);
 
   useEffect(() => {
@@ -62,15 +64,19 @@ export const MoreWork = (url) => {
           }}
           className="rest-website-embed"
         >
-          {mapp.map((x, i) => {
-            return (
-              <div class="doddle-container">
-                <div class="center-doddle"></div>
-                <div class="left-doddle-ear">More</div>
-                <div class="right-doddle-ear">Visit</div>
-              </div>
-            );
-          })}
+          {isLoadingMega ? (
+            <Loading />
+          ) : (
+            MegaProjects.map((x, i) => {
+              return (
+                <div class="doddle-container">
+                  <div class="center-doddle"></div>
+                  <div class="left-doddle-ear">More</div>
+                  <div class="right-doddle-ear">Visit</div>
+                </div>
+              );
+            })
+          )}
         </div>
       )}
     </div>

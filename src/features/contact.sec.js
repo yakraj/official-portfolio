@@ -4,6 +4,7 @@ import emailjs from "emailjs-com";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { MainContext } from "../conext/main.context";
+import { Helmet } from "react-helmet";
 // import nodemailer from "nodemailer";
 export const ContactSec = () => {
   const contactsec = useRef();
@@ -72,6 +73,11 @@ export const ContactSec = () => {
   return (
     <>
       <div ref={contactsec} id="contact-section">
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>{`Yakraj Pariyar`}</title>
+          <link rel="canonical" href="http://yakraj.com/" />
+        </Helmet>
         <h1>Contact Me</h1>
 
         <div className="contact-lists">
