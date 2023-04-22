@@ -8,7 +8,7 @@ export const SingleSlide = (data) => {
 
   return (
     <>
-      {isLoadingMega && data ? (
+      {!isLoadingMega && !data ? (
         <Loading />
       ) : (
         <div className="single-slide">
@@ -56,7 +56,7 @@ export const SingleSlide = (data) => {
           </div>
           <hr style={{ width: "70%", height: "2px" }} /> */}
             <h1 className="gallerytext">Gallery</h1>
-            <div class="gallery-more-button">
+            <div className="gallery-more-button">
               <div> More</div>
             </div>
             <div className="images-slide">

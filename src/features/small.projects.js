@@ -36,7 +36,7 @@ export const SmallProjects = (url) => {
     8, 9,
   ];
   return (
-    <div ref={browserWin} class="embed-window">
+    <div ref={browserWin} className="embed-window">
       <div className="embed-nav-window">
         <h3
           style={{
@@ -65,7 +65,7 @@ export const SmallProjects = (url) => {
           ) : (
             SmallProjects.map(() => {
               return (
-                <div class="component-card" message="Micro Hardness Tester">
+                <div className="component-card" message="Micro Hardness Tester">
                   <h3>card component</h3>
                 </div>
               );

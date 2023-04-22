@@ -30,7 +30,7 @@ export const MoreWork = (url) => {
     6, 7, 8, 9, 10,
   ];
   return (
-    <div ref={browserWin} class="embed-window">
+    <div ref={browserWin} className="embed-window">
       <div className="embed-nav-window">
         <h3
           style={{
@@ -69,10 +69,10 @@ export const MoreWork = (url) => {
           ) : (
             MegaProjects.map((x, i) => {
               return (
-                <div class="doddle-container">
-                  <div class="center-doddle"></div>
-                  <div class="left-doddle-ear">More</div>
-                  <div class="right-doddle-ear">Visit</div>
+                <div className="doddle-container">
+                  <div className="center-doddle"></div>
+                  <div className="left-doddle-ear">More</div>
+                  <div className="right-doddle-ear">Visit</div>
                 </div>
               );
             })

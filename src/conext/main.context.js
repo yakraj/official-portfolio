@@ -16,18 +16,18 @@ export const WebContext = ({ children }) => {
   const [MegaProjects, setMegaProjects] = useState([]);
   const [isLoadingSmall, setisLoadingSmall] = useState(true);
   const [isLoadingMega, setisLoadingMega] = useState(true);
+  const [MegamainD, setMegamainD] = useState();
 
   const GetSmallProjects = () => {
-    AqSmallProjects(isLoadingSmall, SmallProjects);
+    AqSmallProjects(isLoadingSmall, setSmallProjects);
   };
   const GetMegaProjects = () => {
-    AqMegaProjects(isLoadingMega, MegaProjects);
+    AqMegaProjects(isLoadingMega, setMegaProjects);
   };
   useEffect(() => {
     GetSmallProjects();
     GetMegaProjects();
   }, []);
-  console.log(MegaProjects, SmallProjects);
   return (
     <MainContext.Provider
       value={{
@@ -51,6 +51,8 @@ export const WebContext = ({ children }) => {
         MegaProjects,
         isLoadingSmall,
         isLoadingMega,
+        MegamainD,
+        setMegamainD,
       }}
     >
       {children}

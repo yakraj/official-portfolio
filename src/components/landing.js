@@ -30,9 +30,9 @@ export const Landing = () => {
       <AboutPage />
       <AlertBox />
       <CardaPlay />
-      <Social />
+      {/* <Social /> */}
       <RecentWorks />
-      <ScrollTriggerTrial />
+      {/* <ScrollTriggerTrial /> */}
       {/* <Portfolio /> */}
       <ContactSec />
     </>

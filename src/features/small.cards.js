@@ -5,6 +5,7 @@ import { MainContext } from "../conext/main.context";
 
 import "../styles/small.cards.css";
 import { SocialMedia } from "./social-media";
+import { ImageServer } from "../components/server";
 export const CardaPlay = () => {
   const {
     setpopAnimation,
@@ -293,25 +294,231 @@ export const CardaPlay = () => {
             Full stack
           </h1>
         </div>
-        <div id="id1681960633380">
-          <div className="parent">
-            <div className="div1" />
-            <div className="div2" />
-            <div className="div3" />
-            <div className="div4" />
-            <div className="div5" />
-            <div className="div6" />
-            <div className="div7" />
-            <div className="div8" />
-            <div className="div9" />
-            <div className="div10" />
-            <div className="div11" />
-            <div className="div12" />
-            <div className="div13" />
-            <div className="div14" />
-            <div className="div15" />
+        {SmallProjects.length && (
+          <div id="id1681960633380 " className="works-grid">
+            <div className="parent">
+              <div
+                onClick={() => {
+                  setpopAnimation("AnimateWindow 0.8s forwards");
+                  setembedURL(SmallProjects[1].url);
+                }}
+                className="div1"
+              >
+                <img
+                  alt="thumbnail"
+                  src={`${ImageServer}h_200/${SmallProjects[1].thumbnail}`}
+                />
+              </div>
+              <div
+                onClick={() => {
+                  setpopAnimation("AnimateWindow 0.8s forwards");
+                  setembedURL(SmallProjects[2].url);
+                }}
+                className="div2"
+              >
+                <img
+                  alt="thumbnail"
+                  src={`${ImageServer}h_200/${SmallProjects[2].thumbnail}`}
+                />
+              </div>
+              <div
+                onClick={() => {
+                  setpopAnimation("AnimateWindow 0.8s forwards");
+                  setembedURL(SmallProjects[3].url);
+                }}
+                className="div3"
+              >
+                <img
+                  alt="thumbnail"
+                  src={`${ImageServer}h_200/${SmallProjects[3].thumbnail}`}
+                />
+              </div>
+              <div
+                onClick={() => {
+                  setpopAnimation("AnimateWindow 0.8s forwards");
+                  setembedURL(SmallProjects[4].url);
+                }}
+                className="div31"
+              >
+                <img
+                  alt="thumbnail"
+                  src={`${ImageServer}h_200/${SmallProjects[4].thumbnail}`}
+                />
+              </div>
+              <div
+                onClick={() => {
+                  setpopAnimation("AnimateWindow 0.8s forwards");
+                  setembedURL(SmallProjects[5].url);
+                }}
+                className="div4"
+              >
+                <img
+                  alt="thumbnail"
+                  src={`${ImageServer}h_200/${SmallProjects[5].thumbnail}`}
+                />
+              </div>
+              <div
+                onClick={() => {
+                  setpopAnimation("AnimateWindow 0.8s forwards");
+                  setembedURL(SmallProjects[6].url);
+                }}
+                className="div5"
+              >
+                <img
+                  alt="thumbnail"
+                  src={`${ImageServer}h_200/${SmallProjects[6].thumbnail}`}
+                />
+              </div>
+              <div
+                onClick={() => {
+                  setpopAnimation("AnimateWindow 0.8s forwards");
+                  setembedURL(SmallProjects[7].url);
+                }}
+                className="div51"
+              >
+                <img
+                  alt="thumbnail"
+                  src={`${ImageServer}h_200/${SmallProjects[7].thumbnail}`}
+                />
+              </div>
+              <div
+                onClick={() => {
+                  setpopAnimation("AnimateWindow 0.8s forwards");
+                  setembedURL(SmallProjects[8].url);
+                }}
+                className="div6"
+              >
+                <img
+                  alt="thumbnail"
+                  src={`${ImageServer}h_200/${SmallProjects[8].thumbnail}`}
+                />
+              </div>
+              <div
+                onClick={() => {
+                  setpopAnimation("AnimateWindow 0.8s forwards");
+                  setembedURL(SmallProjects[9].url);
+                }}
+                className="div7"
+              >
+                <img
+                  alt="thumbnail"
+                  src={`${ImageServer}h_200/${SmallProjects[9].thumbnail}`}
+                />
+              </div>
+              <div
+                onClick={() => {
+                  setpopAnimation("AnimateWindow 0.8s forwards");
+                  setembedURL(SmallProjects[10].url);
+                }}
+                className="div8"
+              >
+                <img
+                  alt="thumbnail"
+                  src={`${ImageServer}h_200/${SmallProjects[10].thumbnail}`}
+                />
+              </div>
+              <div
+                onClick={() => {
+                  setpopAnimation("AnimateWindow 0.8s forwards");
+                  setembedURL(SmallProjects[11].url);
+                }}
+                className="div81"
+              >
+                <img
+                  alt="thumbnail"
+                  src={`${ImageServer}h_200/${SmallProjects[11].thumbnail}`}
+                />
+              </div>
+              <div
+                onClick={() => {
+                  setpopAnimation("AnimateWindow 0.8s forwards");
+                  setembedURL(SmallProjects[12].url);
+                }}
+                className="div9"
+              >
+                <img
+                  alt="thumbnail"
+                  src={`${ImageServer}h_200/${SmallProjects[12].thumbnail}`}
+                />
+              </div>
+              <div
+                onClick={() => {
+                  setpopAnimation("AnimateWindow 0.8s forwards");
+                  setembedURL(SmallProjects[13].url);
+                }}
+                className="div91"
+              >
+                <img
+                  alt="thumbnail"
+                  src={`${ImageServer}h_200/${SmallProjects[13].thumbnail}`}
+                />
+              </div>
+              <div
+                onClick={() => {
+                  setpopAnimation("AnimateWindow 0.8s forwards");
+                  setembedURL(SmallProjects[14].url);
+                }}
+                className="div10"
+              >
+                <img
+                  alt="thumbnail"
+                  src={`${ImageServer}h_200/${SmallProjects[14].thumbnail}`}
+                />
+              </div>
+              <div
+                onClick={() => {
+                  setpopAnimation("AnimateWindow 0.8s forwards");
+                  setembedURL(SmallProjects[15].url);
+                }}
+                className="div11"
+              >
+                <img
+                  alt="thumbnail"
+                  src={`${ImageServer}h_200/${SmallProjects[15].thumbnail}`}
+                />
+              </div>
+              <div
+                onClick={() => {
+                  setpopAnimation("AnimateWindow 0.8s forwards");
+                  setembedURL(SmallProjects[16].url);
+                }}
+                className="div12"
+              >
+                <img
+                  alt="thumbnail"
+                  src={`${ImageServer}h_200/${SmallProjects[16].thumbnail}`}
+                />
+              </div>
+              <div
+                onClick={() => {
+                  setpopAnimation("AnimateWindow 0.8s forwards");
+                  setembedURL(SmallProjects[17].url);
+                }}
+                className="div13"
+              >
+                <img
+                  alt="thumbnail"
+                  src={`${ImageServer}h_200/${SmallProjects[17].thumbnail}`}
+                />
+              </div>
+              <div
+                onClick={() => {
+                  setpopAnimation("AnimateWindow 0.8s forwards");
+                  setembedURL(SmallProjects[18].url);
+                }}
+                className="div14"
+              >
+                <img
+                  alt="thumbnail"
+                  src={`${ImageServer}h_200/${SmallProjects[18].thumbnail}`}
+                />
+              </div>
+              <article className="div15">
+                <h1>More</h1>
+              </article>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </>
   );

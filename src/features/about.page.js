@@ -13,7 +13,7 @@ export const AboutPage = () => {
         <meta charSet="utf-8" />
         <link rel="canonical" href="http://yakraj.com/" />
       </Helmet>
-      <p>
+      <p style={{ zIndex: 10 }}>
         I<span>create</span>
         things and
         <span>Implement</span>
@@ -34,7 +34,7 @@ export const AboutPage = () => {
       </p>
 
       {/* social media icons  */}
-      <div className="social-media-icons">
+      <div style={{ zIndex: 10 }} className="social-media-icons">
         <a href="https://youtube.com/@yakraj" target="_blank">
           <div className="media-icon youtube-icon">
             <img src={require("../assets/youtube.com.png")} alt="youtube" />
@@ -65,6 +65,16 @@ export const AboutPage = () => {
             <img src={require("../assets/internet.png")} alt="linkedin" />
           </div>
         </a>
+      </div>
+      <div style={{ position: "absolute", zIndex: 1 }}>
+        <div className="video-overlay" />
+        <video autoPlay muted loop id="myVideo">
+          <source
+            src="https://res.cloudinary.com/wows/video/upload/v1682192985/y2mate.com_-_Yakraj_Pariyar_PortfolioCreative1_1080p.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support HTML5 video.
+        </video>
       </div>
     </div>
   );
