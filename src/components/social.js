@@ -18,7 +18,7 @@ export const Social = () => {
         <div className="mobile">
           <div className="screen">
             <iframe
-              src="https://google.com"
+              src="https://twitter.com/YakrajPariyar"
               width="100%"
               height="100%"
               frameborder="0"
