@@ -16,40 +16,40 @@ export const ScrollTriggerTrial = () => {
   const siCon = useRef(null);
   const fullContainer = useRef(null);
 
-  useEffect(() => {
-    var addtop = fullContainer.current.offsetTop;
-    // console.log();
-    var datas = [fCon.current, sCon.current, tCon.current, foCon.current];
+  // useEffect(() => {
+  //   var addtop = fullContainer.current.offsetTop;
+  //   // console.log();
+  //   var datas = [fCon.current, sCon.current, tCon.current, foCon.current];
 
-    // for(let i = 0; i<datas.length;i++){}
-    datas.forEach((data, index) => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: data,
-          start: `${
-            addtop +
-            (window.innerHeight * index +
-              (window.innerHeight / 2) * index +
-              window.innerHeight / 2)
-          } top`,
-          end: `+=${window.innerHeight}`,
-          scrub: 1,
-        },
-      });
-      tl.to(data, {
-        // background: "red",
-        display: "flex",
-        opacity: 1,
-        zIndex: 50,
-      }).to(data, {
-        duration: 0.1,
-        opacity: 0,
-        zIndex: -1,
-        // background: "blue",
-        display: "none",
-      });
-    });
-  }, []);
+  //   // for(let i = 0; i<datas.length;i++){}
+  //   datas.forEach((data, index) => {
+  //     const tl = gsap.timeline({
+  //       scrollTrigger: {
+  //         trigger: data,
+  //         start: `${
+  //           addtop +
+  //           (window.innerHeight * index +
+  //             (window.innerHeight / 2) * index +
+  //             window.innerHeight / 2)
+  //         } top`,
+  //         end: `+=${window.innerHeight}`,
+  //         scrub: 1,
+  //       },
+  //     });
+  //     tl.to(data, {
+  //       // background: "red",
+  //       display: "flex",
+  //       opacity: 1,
+  //       zIndex: 50,
+  //     }).to(data, {
+  //       duration: 0.1,
+  //       opacity: 0,
+  //       zIndex: -1,
+  //       // background: "blue",
+  //       display: "none",
+  //     });
+  //   });
+  // }, []);
 
   const { isLoadingMega, MegaProjects } = useContext(MainContext);
   console.log(isLoadingMega, MegaProjects);

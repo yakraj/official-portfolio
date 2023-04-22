@@ -15,6 +15,8 @@ import { WebsiteInfo } from "../features/website.images";
 import { MoreWork } from "../features/more.work";
 import { SmallProjects } from "../features/small.projects";
 import { YoutubeVideo } from "../features/youtube.video";
+import { Social } from "./social";
+import { RecentWorks } from "../features/recent.works";
 
 export const Landing = () => {
   return (
@@ -28,6 +30,8 @@ export const Landing = () => {
       <AboutPage />
       <AlertBox />
       <CardaPlay />
+      <Social />
+      <RecentWorks />
       <ScrollTriggerTrial />
       {/* <Portfolio /> */}
       <ContactSec />

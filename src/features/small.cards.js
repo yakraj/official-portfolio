@@ -188,87 +188,131 @@ export const CardaPlay = () => {
   }, [mouseOver]);
 
   return (
-    <div className="second-page">
-      <div
-        style={{
-          cursor: "pointer",
-          display: "flex",
-          justifyContent: "center",
-          paddingRight: "20%",
-          boxSizing: "border-box",
-          alignItems: "start",
-          height: "100vh",
-          backgroundPosition: "right center",
-          backgroundSize: "70%",
-          backgroundRepeat: "no-repeat",
-          backgroundColor: "#198f9c",
-          width: "100%",
-          paddingTop: "5%",
-
-          boxSizing: "border-box",
-          backgroundImage: `url(${require("../assets/sprojects.webp")})`,
-        }}
-        className="show-more-work"
-      >
-        <div
-          style={{ position: "relative", zIndex: 100, marginLeft: "15%" }}
-          onClick={() => {
-            setpopSProjects("AnimateWindow 1s forwards");
-          }}
-        >
-          All Projects
+    <>
+      <div className="small-projects">
+        <div id="id1681960633380">
+          <h1
+            style={{
+              textAlign: "start",
+              fontFamily: "Garamond",
+              fontSize: "3rem",
+              margin: "5px",
+            }}
+          >
+            HTML
+          </h1>
+          <h1
+            style={{
+              textAlign: "center",
+              fontFamily: '"Courier New"',
+              fontSize: "3rem",
+              margin: "5px",
+            }}
+          >
+            CSS
+          </h1>
+          <h1
+            style={{
+              textAlign: "start",
+              fontFamily: "Helvetica",
+              fontSize: "3rem",
+              margin: "5px",
+            }}
+          >
+            JAVASCRIPT
+          </h1>
+          <h1
+            style={{
+              textAlign: "center",
+              fontFamily: "Helvetica",
+              fontSize: "3rem",
+              margin: "5px",
+              letterSpacing: "45px",
+            }}
+          >
+            REACT
+          </h1>
+          <h1
+            style={{
+              textAlign: "start",
+              fontFamily: "Helvetica",
+              fontSize: "3rem",
+              margin: "5px",
+              letterSpacing: "7px",
+            }}
+          >
+            REACT NATIVE
+          </h1>
+          <h1
+            style={{
+              textAlign: "start",
+              fontFamily: "Helvetica",
+              fontSize: "9rem",
+              margin: "5px",
+              letterSpacing: "0px",
+              textTransform: "uppercase",
+            }}
+          >
+            sql
+          </h1>
+          <h1
+            style={{
+              textAlign: "start",
+              fontFamily: "Helvetica",
+              fontSize: "2rem",
+              margin: "5px",
+              letterSpacing: "0px",
+              textTransform: "uppercase",
+            }}
+          >
+            Node.js
+          </h1>
+          <h1
+            style={{
+              textAlign: "center",
+              fontFamily: "Helvetica",
+              fontSize: "2rem",
+              margin: "5px",
+              letterSpacing: "0px",
+              textTransform: "uppercase",
+            }}
+          >
+            Express.js
+          </h1>
+          <h1
+            style={{
+              textAlign: "start",
+              fontFamily: "Helvetica",
+              fontSize: "2rem",
+              margin: "5px",
+              letterSpacing: "29px",
+              textTransform: "uppercase",
+              textDecoration: "underline",
+            }}
+          >
+            Full stack
+          </h1>
+        </div>
+        <div id="id1681960633380">
+          <div className="parent">
+            <div className="div1" />
+            <div className="div2" />
+            <div className="div3" />
+            <div className="div4" />
+            <div className="div5" />
+            <div className="div6" />
+            <div className="div7" />
+            <div className="div8" />
+            <div className="div9" />
+            <div className="div10" />
+            <div className="div11" />
+            <div className="div12" />
+            <div className="div13" />
+            <div className="div14" />
+            <div className="div15" />
+          </div>
         </div>
       </div>
-      {isLoadingSmall ? (
-        <Loading />
-      ) : (
-        dynamicClass.map((x, i) => {
-          return (
-            <div
-              style={{
-                backgroundImage: `url(${x.url})`,
-                backgroundSize: "cover",
-              }}
-              onMouseEnter={() => {
-                onmouseOver(true);
-              }}
-              onMouseLeave={() => {
-                onmouseOver(false);
-              }}
-              onClick={() => {
-                setpopAnimation("AnimateWindow 0.8s forwards");
-                setembedURL(x.embed);
-              }}
-              key={x + i}
-              className={"card" + " " + x.position}
-            >
-              <div class="card-info">
-                <p class="title">John Doe</p>
-              </div>
-              <div class="card-bio">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <button>
-                  <svg
-                    height="24"
-                    width="24"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M0 0h24v24H0z" fill="none"></path>
-                    <path
-                      d="M5 13c0-5.088 2.903-9.436 7-11.182C16.097 3.564 19 7.912 19 13c0 .823-.076 1.626-.22 2.403l1.94 1.832a.5.5 0 0 1 .095.603l-2.495 4.575a.5.5 0 0 1-.793.114l-2.234-2.234a1 1 0 0 0-.707-.293H9.414a1 1 0 0 0-.707.293l-2.234 2.234a.5.5 0 0 1-.793-.114l-2.495-4.575a.5.5 0 0 1 .095-.603l1.94-1.832C5.077 14.626 5 13.823 5 13zm1.476 6.696l.817-.817A3 3 0 0 1 9.414 18h5.172a3 3 0 0 1 2.121.879l.817.817.982-1.8-1.1-1.04a2 2 0 0 1-.593-1.82c.124-.664.187-1.345.187-2.036 0-3.87-1.995-7.3-5-8.96C8.995 5.7 7 9.13 7 13c0 .691.063 1.372.187 2.037a2 2 0 0 1-.593 1.82l-1.1 1.039.982 1.8zM12 13a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"
-                      fill="currentColor"
-                    ></path>
-                  </svg>
-                  <span>Visit</span>
-                </button>
-              </div>
-            </div>
-          );
-        })
-      )}
-
-      <SocialMedia />
-    </div>
+    </>
   );
 };
