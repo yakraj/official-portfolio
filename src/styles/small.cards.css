@@ -129,6 +129,7 @@
 .small-projects {
   height: auto;
   width: 100%;
+  background: #000000a1;
   position: relative;
   box-sizing: border-box;
   display: flex;

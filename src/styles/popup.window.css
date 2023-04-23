@@ -167,7 +167,7 @@ iframe {
 .single-image {
   height: auto;
   width: 100%;
-  background: #fff;
+  background: #252525;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -175,24 +175,29 @@ iframe {
 }
 
 .single-image img {
-  margin-top: 5px;
+  padding: 10px;
   width: auto;
   height: auto;
   max-width: 100%;
   max-height: 100vh;
+  box-sizing: border-box;
+  border-radius: 40px;
+  /* overflow: hidden; */
 }
 
 .technologies-container strong {
   font-family: sans-serif;
   font-weight: bold;
-  text-shadow: 3px 6px grey, 1px 2px 2px grey, 2px 4px 4px grey,
-    3px 6px 6px grey;
-  color: #763399;
+  /* text-shadow: 3px 6px grey, 1px 2px 2px grey, 2px 4px 4px grey,
+    3px 6px 6px grey; */
+  color: #002cff;
   margin: 10px;
-  font-size: 2rem;
+  font-size: larger;
   text-transform: uppercase;
   text-align: left;
+  text-decoration: underline;
   width: 100%;
+  margin: 20px 0px;
 }
 
 .technologies {
@@ -208,16 +213,18 @@ iframe {
   text-align: left;
 }
 
-.technologies-container {
+.technologies-container div h1 {
+  background: grey;
+  color: #fff;
+}
+.technologies-container div {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  width: 400%;
-  flex-direction: column;
-  padding-left: 30px;
-  margin-left: 30px;
-  border-left: 7px solid grey;
-  border-radius: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.technologies-container {
+  width: 100%;
 }
 .two-type-parent {
   display: flex;
@@ -239,8 +246,7 @@ iframe {
 
 .info-description-container {
   font-family: "Great Vibes", cursive;
-  font-size: 2.2rem;
-  min-width: 450px;
+  font-size: larger;
   font-weight: 500;
   letter-spacing: 1px;
   /* width: 70%; */

@@ -22,6 +22,14 @@ export const WebsiteInfo = (url) => {
   } = useContext(MainContext);
 
   useEffect(() => {
+    var body = document.getElementsByTagName("BODY");
+    if (popWindowInfo) {
+      if (popWindowInfo.includes("Close")) {
+        body[0].style.overflow = "auto";
+      } else {
+        body[0].style.overflow = "hidden";
+      }
+    }
     if (MegamainD) {
       browserWin.current.style.animation = popWindowInfo;
     }
@@ -41,11 +49,12 @@ export const WebsiteInfo = (url) => {
           <h3
             style={{
               margin: "0px",
-              color: "#99cc6e",
-              textShadow: "2px 2px 1px #000",
+              color: "rgb(248 248 248)",
+              textShadow:
+                "black 0px 0px 1px,azure 0px 0px 3px,azure 0px 0px 5px,black 0px 0px 3px",
             }}
           >
-            Information
+            {MegamainD.title}
           </h3>
           <div
             onClick={() => {
@@ -69,12 +78,12 @@ export const WebsiteInfo = (url) => {
                         <p>{MegamainD.title.substring(4, 100)}</p>
                       </div>
                       <div className="title-right-side">
-                        <a
+                        {/* <a
                           style={{ fontSize: "1rem" }}
                           href="https://www.google.com"
                         >
                           VISIT
-                        </a>
+                        </a> */}
                       </div>
                     </div>
                     <div style={{ display: "flex", justifyContent: "center" }}>
@@ -84,16 +93,19 @@ export const WebsiteInfo = (url) => {
                         </div>
                         <div className="technologies-container">
                           <strong>Technologies Used</strong>
-                          {(() => {
-                            let arr = MegamainD.tech_used.split(", ");
-                            return arr.map((item, i) => {
-                              return (
-                                <div key={i} className="technologies">
-                                  <p>{item}</p>
-                                </div>
-                              );
-                            });
-                          })()}
+                          <hr style={{ width: "100%" }} />
+                          <div>
+                            {(() => {
+                              let arr = MegamainD.tech_used.split(", ");
+                              return arr.map((item, i) => {
+                                return (
+                                  <h1 key={i} className="works-tag">
+                                    {item}
+                                  </h1>
+                                );
+                              });
+                            })()}
+                          </div>
                         </div>
                       </div>
                     </div>

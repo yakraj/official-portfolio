@@ -7,10 +7,6 @@ export const RecentWorks = () => {
   // create a number array of 1 to 20
   // const { setpopWindowInfo, isLoadingMega } = useContext(MainContext);
 
-  const NumberArray = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-  ];
-
   const [RangeValue, onRangeValue] = useState();
   const ContentScroll = useRef();
   const RangeSlider = useRef();
@@ -65,12 +61,11 @@ export const RecentWorks = () => {
                   backgroundImage: `url(${ImageServer}h_200/${item.images[0]})`,
                 }}
                 className="portfolio-card-first"
-              >
-                <div id="id1682067679069">
-                  {item.description.substring(0, 70)}
-                </div>
-              </div>
+              ></div>
               <div
+                style={{
+                  backgroundImage: `url(${ImageServer}h_200/${item.images[1]})`,
+                }}
                 onClick={() => {
                   setpopWindowInfo("AnimateWindow 1s forwards");
                   setMegamainD(item);
@@ -78,8 +73,8 @@ export const RecentWorks = () => {
                 className="portfolio-card-second"
               >
                 <h1 className="works-title">{item.title}</h1>
-                <div id="id1682068208935">
-                  {(() => {
+                {/* <div id="id1682068208935">
+                   {(() => {
                     let arr = item.tech_used.split(", ");
                     return arr.map((item, i) => {
                       return (
@@ -88,9 +83,13 @@ export const RecentWorks = () => {
                         </h1>
                       );
                     });
-                  })()}
-                </div>
+                  })()} 
+                </div> */}
                 <h1 className="works-tag">More</h1>
+                <div id="id1682067679069">
+                  {item.description.substring(0, 70)}
+                </div>
+                <div className="overlay-black" />
               </div>
             </div>
           );
