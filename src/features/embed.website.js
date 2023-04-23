@@ -16,9 +16,8 @@ export const EmbedWebsite = (url, title, description) => {
 
   useEffect(() => {
     var body = document.getElementsByTagName("BODY");
-    console.log(popAnimation);
+
     if (popAnimation) {
-      console.log(popAnimation);
       if (popAnimation.includes("Close")) {
         body[0].style.overflow = "auto";
       } else {
@@ -36,7 +35,7 @@ export const EmbedWebsite = (url, title, description) => {
   }, [popAnimation]);
 
   return (
-    <div ref={browserWin} className="embed-window">
+    <div ref={browserWin} style={{ zIndex: 999 }} className="embed-window">
       <Helmet>
         <meta charSet="utf-8" />
         <title>{`${title}`}</title>

@@ -615,7 +615,12 @@ export const CardaPlay = () => {
                       src={`${ImageServer}h_200/${SmallProjects[18].thumbnail}`}
                     />
                   </div>
-                  <article className="div15">
+                  <article
+                    onClick={() => {
+                      setpopSProjects("AnimateWindow 1s forwards");
+                    }}
+                    className="div15"
+                  >
                     <h1>More</h1>
                   </article>
                 </div>

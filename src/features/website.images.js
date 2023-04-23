@@ -19,6 +19,7 @@ export const WebsiteInfo = (url) => {
     embedURL,
     popWindowInfo,
     MegamainD,
+    setembedURL,
   } = useContext(MainContext);
 
   useEffect(() => {
@@ -77,14 +78,24 @@ export const WebsiteInfo = (url) => {
                         <strong>{MegamainD.title.substring(0, 4)}</strong>
                         <p>{MegamainD.title.substring(4, 100)}</p>
                       </div>
-                      <div className="title-right-side">
-                        {/* <a
-                          style={{ fontSize: "1rem" }}
-                          href="https://www.google.com"
+
+                      {MegamainD.url && (
+                        <div
+                          style={{
+                            color: "blue",
+                            textDecoration: "underline",
+                            cursor: "pointer",
+                            fontSize: "1.2rem",
+                          }}
+                          onClick={() => {
+                            setpopAnimation("AnimateWindow 0.8s forwards");
+                            setembedURL(MegamainD.url);
+                          }}
+                          className="title-right-side"
                         >
                           VISIT
-                        </a> */}
-                      </div>
+                        </div>
+                      )}
                     </div>
                     <div style={{ display: "flex", justifyContent: "center" }}>
                       <div className="two-type-parent">
