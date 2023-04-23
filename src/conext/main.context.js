@@ -22,7 +22,6 @@ export const WebContext = ({ children }) => {
     AqSmallProjects(setisLoadingSmall, setSmallProjects);
   };
   const GetMegaProjects = () => {
-    ``;
     AqMegaProjects(setisLoadingMega, setMegaProjects);
   };
   useEffect(() => {
