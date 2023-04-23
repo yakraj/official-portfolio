@@ -89,7 +89,7 @@ export const SmallProjects = (url) => {
                 <div
                   onClick={() => {
                     setpopAnimation("AnimateWindow 0.8s forwards");
-                    setembedURL(SmallProjects[18].url);
+                    setembedURL(item.url);
                   }}
                   style={{
                     backgroundImage: `url(${ImageServer}h_200/${item.thumbnail})`,
