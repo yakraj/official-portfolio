@@ -19,10 +19,10 @@ export const WebContext = ({ children }) => {
   const [MegamainD, setMegamainD] = useState();
 
   const GetSmallProjects = () => {
-    AqSmallProjects(isLoadingSmall, setSmallProjects);
+    AqSmallProjects(setisLoadingSmall, setSmallProjects);
   };
   const GetMegaProjects = () => {
-    AqMegaProjects(isLoadingMega, setMegaProjects);
+    AqMegaProjects(setisLoadingMega, setMegaProjects);
   };
   useEffect(() => {
     GetSmallProjects();

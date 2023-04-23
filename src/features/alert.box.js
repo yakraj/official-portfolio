@@ -6,7 +6,6 @@ export const AlertBox = (message) => {
   const { alertcolour, alertmessage, alertTime } = useContext(MainContext);
   useEffect(() => {
     if (alertcolour && alertmessage) {
-      console.log(alertcolour, alertmessage, alertTime);
       alertWindow.current.style.animation = "AlertOpen 0.5s forwards";
       setTimeout(() => {
         alertWindow.current.style.animation = "alertEnd 0.5s forwards";

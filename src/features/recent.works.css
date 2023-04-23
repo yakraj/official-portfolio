@@ -92,20 +92,21 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   overflow: hidden;
-  background-image: url("https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg");
 }
 #id1682067679069 {
-  height: 25%;
+  height: auto;
   width: 100%;
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   box-sizing: border-box;
   text-align: start;
   font-size: 0.9rem;
   padding: 5px;
-  background: rgba(7, 7, 7, 0.705);
+  background: rgb(87 95 250 / 63%);
 }
 #id1682068208935 {
   height: 50px;
@@ -130,15 +131,18 @@
 }
 
 .works-tag {
-  color: rgb(0 0 0);
+  color: rgb(118 101 101);
   font-weight: 400;
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 1rem;
   background: rgb(235, 235, 235);
   border-radius: 3px;
   box-shadow: 0px 0px 5px;
   padding: 3px 7px;
   margin: 3px 5px;
+  font-weight: bold;
+  padding: 5px 15px;
+  background: #00ffe7;
 }
 
 /* this style for range slider */
@@ -179,8 +183,23 @@ input[type="range"]::-moz-range-track {
   border-radius: 10px;
 }
 .works-title {
-  margin: 0;
-  margin-bottom: 1rem;
-  font-size: 2rem;
+  margin: 0.5rem;
+  /* margin-bottom: 0.5rem; */
+  font-size: 1.5rem;
   text-transform: capitalize;
+}
+.overlay-black {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: #0000006b;
+}
+
+.works-title,
+.works-tag,
+#id1682067679069 {
+  z-index: 5;
 }

@@ -35,7 +35,7 @@
     padding-bottom: 0;
   }
   .freelancer-text {
-    font-size: 2rem !important;
+    font-size: 2.5rem !important;
   }
 }
 .ImageDome {
@@ -168,7 +168,7 @@
 .yakraj-intro-youtube {
   height: 9%;
   width: 5.5%;
-  background: url("../assets/my-portfolio.webp");
+  /* background: url("../assets/my-portfolio.webp"); */
   background-size: contain;
   position: absolute;
   background-repeat: no-repeat;

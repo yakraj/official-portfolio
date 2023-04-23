@@ -15,6 +15,15 @@ export const EmbedWebsite = (url, title, description) => {
   const [isloading, onisloading] = useState(false);
 
   useEffect(() => {
+    var body = document.getElementsByTagName("BODY");
+    // if (popAnimation) {
+    //   if (popAnimation.includes("Close")) {
+    //     body[0].style.overflow = "auto";
+    //   } else {
+    //     body[0].style.overflow = "hidden";
+    //   }
+    // }
+
     browserWin.current.style.animation = popAnimation;
     onisloading(true);
     setTimeout(() => {
@@ -35,6 +44,7 @@ export const EmbedWebsite = (url, title, description) => {
       <div className="embed-nav-window">
         <input
           value={embedURL}
+          onChange={() => {}}
           type="text"
           placeholder="https://www.yakraj.com"
         />

@@ -38,7 +38,6 @@ export const ContactSec = () => {
   }, []);
   const SendNow = () => {
     if (name && message && emailadd.includes("@") && emailadd.includes(".")) {
-      console.log(name, message, emailadd);
       emailjs
         .send(
           "service_0h0znkk",
