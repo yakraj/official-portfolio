@@ -2,6 +2,9 @@
   .single-slide .images-slide {
     display: none;
   }
+  .two-type-parent {
+    width: auto !important;
+  }
   .portfolio-leftside {
     margin-top: 40px;
   }

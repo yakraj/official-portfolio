@@ -4,7 +4,7 @@ import { AqMegaProjects, AqSmallProjects } from "./main.services";
 export const MainContext = React.createContext();
 
 export const WebContext = ({ children }) => {
-  const [popAnimation, setpopAnimation] = useState("my name is yakraj");
+  const [popAnimation, setpopAnimation] = useState("");
   const [alertcolour, setalertcolour] = useState("");
   const [alertmessage, setalertmessage] = useState("");
   const [alertTime, setalertTime] = useState("");

@@ -200,7 +200,7 @@ export const CardaPlay = () => {
           transitionDuration: "0.5s",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
-          backgroundColor: '#fafafa',
+          backgroundColor: "#fafafa",
           backgroundPosition: "center",
         }}
         className="parent-small-projects"
@@ -210,9 +210,11 @@ export const CardaPlay = () => {
             <h1
               style={{
                 textAlign: "start",
-                fontFamily: "Garamond",
-                fontSize: "3rem",
+                fontFamily: "Oleo Script, Garamond",
+                fontSize: "5rem",
                 margin: "5px",
+                color: "#D84924",
+                textShadow: "0 2px 5px #D84924,0 2px 5px #D84924",
               }}
             >
               HTML
@@ -220,9 +222,11 @@ export const CardaPlay = () => {
             <h1
               style={{
                 textAlign: "center",
-                fontFamily: '"Courier New"',
-                fontSize: "3rem",
+                fontFamily: "Great Vibes,Courier New",
+                fontSize: "10rem",
                 margin: "5px",
+                color: "#2449D8",
+                textShadow: "0 2px 5px #2449D8,0 2px 5px #2449D8",
               }}
             >
               CSS
@@ -230,9 +234,11 @@ export const CardaPlay = () => {
             <h1
               style={{
                 textAlign: "start",
-                fontFamily: "Helvetica",
-                fontSize: "3rem",
+                fontFamily: "Kumar One Outline,Helvetica",
+                fontSize: "5rem",
                 margin: "5px",
+                color: "#EAD41C",
+                textShadow: "0 2px 5px #EAD41C,0 2px 5px #EAD41C",
               }}
             >
               JAVASCRIPT
@@ -244,6 +250,8 @@ export const CardaPlay = () => {
                 fontSize: "3rem",
                 margin: "5px",
                 letterSpacing: "45px",
+                color: "#00CDF2",
+                textShadow: "0 2px 5px #00CDF2,0 2px 5px #00CDF2",
               }}
             >
               REACT
@@ -251,10 +259,12 @@ export const CardaPlay = () => {
             <h1
               style={{
                 textAlign: "start",
-                fontFamily: "Helvetica",
+                fontFamily: "Monoton,Helvetica",
                 fontSize: "3rem",
                 margin: "5px",
                 letterSpacing: "7px",
+                color: "#00CDF2",
+                // textShadow: "0 2px 5px #00CDF2,0 2px 5px #00CDF2",
               }}
             >
               REACT NATIVE
@@ -262,11 +272,12 @@ export const CardaPlay = () => {
             <h1
               style={{
                 textAlign: "start",
-                fontFamily: "Helvetica",
+                fontFamily: "Monoton,Helvetica",
                 fontSize: "9rem",
                 margin: "5px",
                 letterSpacing: "0px",
                 textTransform: "uppercase",
+                color: "#2471BD",
               }}
             >
               sql
@@ -274,11 +285,13 @@ export const CardaPlay = () => {
             <h1
               style={{
                 textAlign: "start",
-                fontFamily: "Helvetica",
-                fontSize: "2rem",
+                fontFamily: "Kumar One Outline,Helvetica",
+                fontSize: "3rem",
                 margin: "5px",
                 letterSpacing: "0px",
                 textTransform: "uppercase",
+                color: "#6A9F5C",
+                // textShadow: "0 2px 5px #6A9F5C,0 2px 5px #6A9F5C",
               }}
             >
               Node.js
@@ -287,10 +300,12 @@ export const CardaPlay = () => {
               style={{
                 textAlign: "center",
                 fontFamily: "Helvetica",
-                fontSize: "2rem",
+                fontSize: "6rem",
                 margin: "5px",
                 letterSpacing: "0px",
                 textTransform: "uppercase",
+                color: "#89BB3C",
+                textShadow: "0 2px 5px #89BB3C,0 2px 5px #89BB3C",
               }}
             >
               Express.js
@@ -298,12 +313,14 @@ export const CardaPlay = () => {
             <h1
               style={{
                 textAlign: "start",
-                fontFamily: "Helvetica",
+                fontFamily: "Shrikhand,Helvetica",
                 fontSize: "2rem",
                 margin: "5px",
                 letterSpacing: "29px",
                 textTransform: "uppercase",
                 textDecoration: "underline",
+                color: "#E4D04A",
+                textShadow: "0 0px 2px #E4D04A",
               }}
             >
               Full stack
@@ -316,7 +333,6 @@ export const CardaPlay = () => {
                 justifyContent: "center",
                 alignItems: "center",
                 width: "50%",
-                
               }}
             >
               <img

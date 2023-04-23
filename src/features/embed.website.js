@@ -16,13 +16,15 @@ export const EmbedWebsite = (url, title, description) => {
 
   useEffect(() => {
     var body = document.getElementsByTagName("BODY");
-    // if (popAnimation) {
-    //   if (popAnimation.includes("Close")) {
-    //     body[0].style.overflow = "auto";
-    //   } else {
-    //     body[0].style.overflow = "hidden";
-    //   }
-    // }
+    console.log(popAnimation);
+    if (popAnimation) {
+      console.log(popAnimation);
+      if (popAnimation.includes("Close")) {
+        body[0].style.overflow = "auto";
+      } else {
+        body[0].style.overflow = "hidden";
+      }
+    }
 
     browserWin.current.style.animation = popAnimation;
     onisloading(true);
