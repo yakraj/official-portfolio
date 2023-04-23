@@ -168,7 +168,7 @@
 .yakraj-intro-youtube {
   height: 9%;
   width: 5.5%;
-  background: url("../assets/my-portfolio.webp");
+  /* background: url("../assets/my-portfolio.webp"); */
   background-size: contain;
   position: absolute;
   background-repeat: no-repeat;

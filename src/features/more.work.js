@@ -69,7 +69,7 @@ export const MoreWork = (url) => {
           ) : (
             MegaProjects.map((x, i) => {
               return (
-                <div className="doddle-container">
+                <div key = {i} className="doddle-container">
                   <div className="center-doddle"></div>
                   <div className="left-doddle-ear">More</div>
                   <div className="right-doddle-ear">Visit</div>

@@ -409,7 +409,7 @@ this is dummy page
   display: flex;
   justify-content: flex-end;
   padding-right: 20%;
-  background-image: url("../assets/more-work.webp");
+  /* background-image: url("../assets/more-work.webp"); */
   box-sizing: border-box;
   align-items: center;
   height: 100vh;

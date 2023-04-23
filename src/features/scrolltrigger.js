@@ -18,7 +18,6 @@ export const ScrollTriggerTrial = () => {
 
   useEffect(() => {
     var addtop = fullContainer.current.offsetTop;
-    // console.log();
     var datas = [fCon.current, sCon.current, tCon.current, foCon.current];
 
     // for(let i = 0; i<datas.length;i++){}
@@ -52,7 +51,6 @@ export const ScrollTriggerTrial = () => {
   }, []);
 
   const { isLoadingMega, MegaProjects } = useContext(MainContext);
-  console.log(isLoadingMega, MegaProjects);
 
   return (
     <>

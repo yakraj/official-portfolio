@@ -60,7 +60,7 @@ export const SmallProjects = (url) => {
         <Loader />
       ) : (
         <div className="rest-website-embed full-items-container">
-          {isLoadingSmall ? (
+          {/* {isLoadingSmall ? (
             <Loading />
           ) : (
             SmallProjects.map(() => {
@@ -70,7 +70,7 @@ export const SmallProjects = (url) => {
                 </div>
               );
             })
-          )}
+          )} */}
         </div>
       )}
     </div>

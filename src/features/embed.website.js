@@ -44,6 +44,7 @@ export const EmbedWebsite = (url, title, description) => {
       <div className="embed-nav-window">
         <input
           value={embedURL}
+          onChange={() => {}}
           type="text"
           placeholder="https://www.yakraj.com"
         />

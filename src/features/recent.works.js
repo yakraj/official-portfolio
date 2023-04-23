@@ -10,7 +10,7 @@ export const RecentWorks = () => {
   const [RangeValue, onRangeValue] = useState();
   const ContentScroll = useRef();
   const RangeSlider = useRef();
-  const { MegaProjects, setpopWindowInfo, setMegamainD } =
+  const { MegaProjects, setpopWindowInfo, setMegamainD, setisLoadingMega } =
     useContext(MainContext);
   useEffect(() => {
     // get the percentage of contentscroll from scroll width
@@ -53,27 +53,43 @@ export const RecentWorks = () => {
         </div>
       </div>
       <div ref={ContentScroll} className="portfolio-contents">
-        {MegaProjects.map((item, i) => {
-          return (
-            <div key={i} className="portfolio-card-container">
-              <div
-                style={{
-                  backgroundImage: `url(${ImageServer}h_200/${item.images[0]})`,
-                }}
-                className="portfolio-card-first"
-              ></div>
-              <div
-                style={{
-                  backgroundImage: `url(${ImageServer}h_200/${item.images[1]})`,
-                }}
-                onClick={() => {
-                  setpopWindowInfo("AnimateWindow 1s forwards");
-                  setMegamainD(item);
-                }}
-                className="portfolio-card-second"
-              >
-                <h1 className="works-title">{item.title}</h1>
-                {/* <div id="id1682068208935">
+        {setisLoadingMega ? (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              width: "50%",
+            }}
+          >
+            <img
+              style={{ width: "150px", height: "150px" }}
+              alt="loading"
+              src={require("../assets/loading.gif")}
+            />
+          </div>
+        ) : (
+          MegaProjects.map((item, i) => {
+            return (
+              <div key={i} className="portfolio-card-container">
+                <div
+                  style={{
+                    backgroundImage: `url(${ImageServer}h_200/${item.images[0]})`,
+                  }}
+                  className="portfolio-card-first"
+                ></div>
+                <div
+                  style={{
+                    backgroundImage: `url(${ImageServer}h_200/${item.images[1]})`,
+                  }}
+                  onClick={() => {
+                    setpopWindowInfo("AnimateWindow 1s forwards");
+                    setMegamainD(item);
+                  }}
+                  className="portfolio-card-second"
+                >
+                  <h1 className="works-title">{item.title}</h1>
+                  {/* <div id="id1682068208935">
                    {(() => {
                     let arr = item.tech_used.split(", ");
                     return arr.map((item, i) => {
@@ -85,15 +101,16 @@ export const RecentWorks = () => {
                     });
                   })()} 
                 </div> */}
-                <h1 className="works-tag">More</h1>
-                <div id="id1682067679069">
-                  {item.description.substring(0, 70)}
+                  <h1 className="works-tag">More</h1>
+                  <div id="id1682067679069">
+                    {item.description.substring(0, 70)}
+                  </div>
+                  <div className="overlay-black" />
                 </div>
-                <div className="overlay-black" />
               </div>
-            </div>
-          );
-        })}
+            );
+          })
+        )}
       </div>
       <div ref={RangeSlider} id="id1682067593169">
         <input

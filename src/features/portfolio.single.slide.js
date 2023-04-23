@@ -8,7 +8,7 @@ export const SingleSlide = (data) => {
 
   return (
     <>
-      {!isLoadingMega && !data ? (
+      {isLoadingMega && data ? (
         <Loading />
       ) : (
         <div className="single-slide">
