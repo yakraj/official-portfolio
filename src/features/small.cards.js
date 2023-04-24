@@ -602,17 +602,17 @@ export const CardaPlay = () => {
                   </div>
                   <div
                     onMouseOver={() => {
-                      BackgroundChange(SmallProjects[18].thumbnail);
+                      BackgroundChange(SmallProjects[0].thumbnail);
                     }}
                     onClick={() => {
                       setpopAnimation("AnimateWindow 0.8s forwards");
-                      setembedURL(SmallProjects[18].url);
+                      setembedURL(SmallProjects[0].url);
                     }}
                     className="div14"
                   >
                     <img
                       alt="thumbnail"
-                      src={`${ImageServer}h_200/${SmallProjects[18].thumbnail}`}
+                      src={`${ImageServer}h_200/${SmallProjects[0].thumbnail}`}
                     />
                   </div>
                   <article
