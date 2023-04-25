@@ -1,10 +1,11 @@
 .parent {
-  display: grid;
-  grid-template-columns: repeat(7, 0fr);
-  grid-template-rows: repeat(7, 0fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  transform: rotate(-45deg);
+      grid-column-gap: 0;
+    grid-row-gap: 0;
+    display: grid;
+    grid-template-columns: repeat(7,0fr);
+    grid-template-rows: repeat(7,0fr);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }
 
 .parent div:hover {
@@ -139,7 +140,7 @@
   width: 50%;
   position: relative;
   box-sizing: border-box;
-  padding-left: 10px;
+  padding-left: 10px; 
   height: 1200px;
   display: flex;
   flex-direction: column;
@@ -158,13 +159,12 @@
     align-items: center;
   }
   .works-grid {
-    height: 750px;
-    display: block !important;
-    /* justify-content: flex-start; */
+       /* display: block!important; */
+    height: 850px;
+    width: 100%;
+    min-width: 100% !important;
   }
-  .parent {
-    margin-left: -100px;
-  }
+
   .parent div {
     width: 70px;
     height: 70px;

@@ -343,7 +343,11 @@ export const CardaPlay = () => {
             </div>
           ) : (
             SmallProjects.length && (
-              <div id="id1681960633380 " className="works-grid">
+              <div
+                data-cursor-exclusion
+                id="id1681960633380 "
+                className="works-grid"
+              >
                 <div className="parent">
                   <div
                     onMouseOver={() => {

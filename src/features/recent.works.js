@@ -18,10 +18,13 @@ export const RecentWorks = () => {
 
     if (data.scrollWidth - data.offsetWidth < 5) {
       RangeSlider.current.style.display = "none";
+    } else {
+      RangeSlider.current.style.display = "flex";
     }
+    console.log(data.scrollWidth - data.offsetWidth);
     const scrollPercentage = (data.offsetWidth * 100) / data.scrollWidth;
     onRangeValue(scrollPercentage);
-  }, []);
+  }, [MegaProjects]);
 
   function handleChange(event) {
     onRangeValue(event.target.value);
@@ -71,7 +74,11 @@ export const RecentWorks = () => {
         ) : (
           MegaProjects.map((item, i) => {
             return (
-              <div key={i} className="portfolio-card-container">
+              <div
+                data-cursor-exclusion
+                key={i}
+                className="portfolio-card-container"
+              >
                 <div
                   style={{
                     backgroundImage: `url(${ImageServer}h_200/${item.images[0]})`,
