@@ -795,3 +795,64 @@
     transform: translateY(-2000px);
   }
 }
+
+/* this is for cube */
+
+.cube {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition-duration: 10s;
+  animation: spin 10s linear infinite;
+}
+
+.cube div {
+  transition-duration: 5s;
+  position: absolute;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid black;
+}
+
+.cube .front {
+  transform: translateZ(50px);
+}
+
+.cube .back {
+  background: pink;
+  transform: translateZ(-50px) rotateY(180deg);
+}
+
+.cube .right {
+  background: green;
+  transform: rotateY(90deg) translateZ(50px);
+}
+
+.cube .left {
+  background: blue;
+  transform: rotateY(-90deg) translateZ(50px);
+}
+
+.cube .top {
+  background: violet;
+  transform: rotateX(90deg) translateZ(50px);
+}
+
+.cube .bottom {
+  background: khaki;
+  transform: rotateX(-90deg) translateZ(50px);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}

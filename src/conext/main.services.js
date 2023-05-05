@@ -7,7 +7,10 @@ export const AqSmallProjects = (isLoadingSmall, setSmallProjects) => {
     .then((data) => {
       setSmallProjects(data);
       isLoadingSmall(false);
-    }).catch(err =>{window.alert('something went wrong')})
+    })
+    .catch((err) => {
+      window.alert("something went wrong");
+    });
 };
 export const AqMegaProjects = (isLoadingMega, setMegaProjects) => {
   fetch(Server + "/megaproject")
@@ -17,5 +20,20 @@ export const AqMegaProjects = (isLoadingMega, setMegaProjects) => {
     .then((data) => {
       setMegaProjects(data);
       isLoadingMega(false);
-    }).catch(err =>{window.alert('something went wrong')});
+    })
+    .catch((err) => {
+      window.alert("something went wrong");
+    });
+};
+export const getAllImages = (setAllImages) => {
+  fetch(Server + "/imagesdata")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      setAllImages(data);
+    })
+    .catch((err) => {
+      window.alert("something went wrong");
+    });
 };

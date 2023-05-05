@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { AqMegaProjects, AqSmallProjects } from "./main.services";
+import { AqMegaProjects, AqSmallProjects, getAllImages } from "./main.services";
 
 export const MainContext = React.createContext();
 
@@ -17,6 +17,7 @@ export const WebContext = ({ children }) => {
   const [isLoadingSmall, setisLoadingSmall] = useState(true);
   const [isLoadingMega, setisLoadingMega] = useState(true);
   const [MegamainD, setMegamainD] = useState();
+  const [AllImages, setAllImages] = useState([]);
 
   const GetSmallProjects = () => {
     AqSmallProjects(setisLoadingSmall, setSmallProjects);
@@ -24,9 +25,18 @@ export const WebContext = ({ children }) => {
   const GetMegaProjects = () => {
     AqMegaProjects(setisLoadingMega, setMegaProjects);
   };
+
+  const GetAllimages = () => {
+    getAllImages(setAllImages);
+  };
+
+  const GetReImages = () => {
+    return AllImages;
+  };
   useEffect(() => {
     GetSmallProjects();
     GetMegaProjects();
+    GetAllimages();
   }, []);
   return (
     <MainContext.Provider
@@ -53,6 +63,8 @@ export const WebContext = ({ children }) => {
         isLoadingMega,
         MegamainD,
         setMegamainD,
+        AllImages,
+        GetReImages,
       }}
     >
       {children}

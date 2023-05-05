@@ -1,79 +1,16 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import "../styles/firstpage.css";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { Helmet } from "react-helmet";
+import { MainContext } from "../conext/main.context";
+import { ImageServer } from "../components/server";
 export const FirstLanding = () => {
+  const { AllImages, GetReImages } = useContext(MainContext);
+
   const wHeight = window.innerHeight;
   const wWidth = window.innerWidth;
-  const [dynamicClass, ondynamicClass] = useState([
-    {
-      position: "language-second",
-      text: "JAVASCRIPT",
-      colour: "#F7DF1E",
-    },
-
-    {
-      position: "language-center",
-      text: "ANDROID",
-      colour: "#2FD37D",
-    },
-    {
-      position: "language-last",
-      text: "HTML",
-      colour: "#F16529",
-    },
-    {
-      position: "language-last last-hide language-hide",
-      text: "CSS",
-      colour: "#2196F3",
-    },
-    {
-      position: "language-last last-hide language-hide",
-      text: "NODE JS",
-      colour: "#8BC500",
-    },
-    {
-      position: "language-last last-hide language-hide",
-      text: "SQL",
-      colour: "rgb(61,136,188)",
-    },
-    {
-      position: "language-last last-hide language-hide",
-      text: "REACT",
-      colour: "#222222",
-    },
-    {
-      position: "language-last last-hide language-hide",
-      text: "REACT NATIVE",
-      colour: "#222222",
-    },
-    {
-      position: "language-last last-hide language-hide",
-      text: "EXPRESS JS",
-      colour: "#5FAC43",
-    },
-    {
-      position: "language-last last-hide language-hide",
-      text: "WORDPRESS",
-      colour: "#1F6F93",
-    },
-    {
-      position: "language-last last-hide language-hide",
-      text: "BOOTSTRAP",
-      colour: "#7641BD",
-    },
-    {
-      position: "language-last last-hide language-hide",
-      text: "JQUERY",
-      colour: "#1064A5",
-    },
-    {
-      position: "language-last last-hide language-hide",
-      text: "TYPESCRIPT",
-      colour: "#1064A5",
-    },
-  ]);
+  const [dynamicClass, ondynamicClass] = useState([]);
   const DomHouse = useRef(null);
   const DomeDoor = useRef(null);
   const youtubeIntro = useRef(null);
@@ -81,12 +18,69 @@ export const FirstLanding = () => {
 
   // this is only for coding languages bubbles
   const appbody = useRef(null);
-  var objects = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
-    22, 23, 24, 25, 26,
-  ];
 
   const freelancerText = useRef(null);
+
+  // this is for append cubes
+  useEffect(() => {
+    if (AllImages.length) {
+      function createCubeElement() {
+        const cube = document.createElement("div");
+        cube.classList.add("cube");
+        const faces = ["front", "back", "right", "left", "top", "bottom"];
+
+        for (let i = 0; i < faces.length; i++) {
+          const face = document.createElement("div");
+          const URL =
+            ImageServer +
+            AllImages[Math.floor(Math.random() * AllImages.length)].thumbnail;
+          face.classList.add(faces[i]);
+          console.log(URL);
+          face.style.backgroundImage = `url(${URL})`;
+
+          cube.appendChild(face);
+        }
+        const moveit = () => {
+          const randomNum = Math.random() * 0.7 + 0.3;
+
+          var windowWidth = window.innerWidth;
+          var windowHeight = window.innerHeight;
+          var cubeWidth = cube.offsetWidth;
+          var cubeHeight = cube.offsetHeight;
+          var randomX = Math.floor(Math.random() * (windowWidth - cubeWidth));
+          var randomY = Math.floor(Math.random() * (windowHeight - cubeHeight));
+          cube.style.transform = `perspective(100px) translate3d(0, 0, ${
+            -1 * Math.floor(Math.random() * 100)
+          }px)`;
+          cube.style.left = randomX + "px";
+          cube.style.top = randomY + "px";
+          cube.style.scale = randomNum;
+
+          var children = cube.children;
+          cube.style.zIndex = Math.round(randomNum * 10);
+
+          for (var i = 0; i < children.length; i++) {
+            children[i].style.filter = `blur(${(0.9 - randomNum) * 10}px)`;
+          }
+          // cube.style.filter = blur();
+        };
+        moveit();
+
+        // Move the cube every 5 seconds
+        setInterval(moveit, 5000);
+
+        appbody.current.appendChild(cube);
+        setTimeout(() => {
+          cube.remove();
+        }, 50000);
+      }
+      createCubeElement();
+      // create cube in every 13 sec
+      setInterval(createCubeElement, 13000);
+    }
+    return;
+  }, [AllImages]);
+
   useEffect(() => {
     const Introtext = freelancerText.current;
     const message1 = "Freelancer.";
