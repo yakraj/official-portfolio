@@ -8,9 +8,7 @@ function App() {
   useEffect(() => {
     fetch(Server)
       .then((response) => response.json())
-      .then((data) => {
-       
-      })
+      .then((data) => {})
       .catch((error) => console.error(error));
   }, []);
   return (

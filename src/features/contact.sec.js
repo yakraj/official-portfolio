@@ -71,7 +71,7 @@ export const ContactSec = () => {
 
   return (
     <>
-      <div ref={contactsec} id="contact-section">
+      <div data-cursor-exclusion ref={contactsec} id="contact-section">
         <Helmet>
           <meta charSet="utf-8" />
           <title>{`Yakraj Pariyar`}</title>

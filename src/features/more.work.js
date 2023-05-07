@@ -30,8 +30,8 @@ export const MoreWork = (url) => {
     6, 7, 8, 9, 10,
   ];
   return (
-    <div ref={browserWin} className="embed-window">
-      <div className="embed-nav-window">
+    <div  ref={browserWin} className="embed-window">
+      <div data-cursor-exclusion className="embed-nav-window">
         <h3
           style={{
             margin: "0px",

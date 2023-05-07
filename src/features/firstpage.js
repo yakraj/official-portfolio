@@ -61,8 +61,8 @@ export const FirstLanding = () => {
           cube.style.zIndex = Math.round(randomNum * 10);
 
           for (var i = 0; i < children.length; i++) {
-            children[i].style.filter = `blur(${(0.9 - randomNum) * 10}px)`;
-            children[i].style.opacity = randomNum + 0.2;
+            children[i].style.filter = `blur(${(0.9 - randomNum) * 10 - 3}px)`;
+            children[i].style.opacity = randomNum + 0.4;
           }
           // cube.style.filter = blur();
         };
@@ -70,7 +70,7 @@ export const FirstLanding = () => {
 
         // Move the cube every 5 seconds
         setInterval(moveit, 5000);
-
+        // remove cube in every 50sec
         appbody.current.appendChild(cube);
         setTimeout(() => {
           cube.remove();
@@ -78,7 +78,7 @@ export const FirstLanding = () => {
       }
       createCubeElement();
       // create cube in every 3 sec
-      setInterval(createCubeElement, 3000);
+      setInterval(createCubeElement, 8000);
     }
     return;
   }, [AllImages]);
@@ -131,7 +131,7 @@ export const FirstLanding = () => {
   }, []);
 
   return (
-    <div ref={appbody} className="firstlanding-page">
+    <div ref={appbody} data-cursor-exclusion className="firstlanding-page">
       <div className="first-landing-absolute">
         <div id="stars"></div>
         <div id="stars2"></div>
