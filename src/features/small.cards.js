@@ -245,6 +245,19 @@ export const CardaPlay = () => {
             </h1>
             <h1
               style={{
+                textAlign: "left",
+                fontFamily: "Helvetica",
+                fontSize: "3rem",
+                margin: "5px",
+                letterSpacing: "20px",
+                color: "blueviolet",
+                textShadow: "0 2px 5px #00CDF2,0 2px 5px #00CDF2",
+              }}
+            >
+              TYPESCRIPT
+            </h1>
+            <h1
+              style={{
                 textAlign: "center",
                 fontFamily: "Helvetica",
                 fontSize: "3rem",

@@ -45,7 +45,7 @@ export const SmallProjects = (url) => {
 
   return (
     <div ref={browserWin} className="embed-window">
-      <div className="embed-nav-window">
+      <div data-cursor-exclusion className="embed-nav-window">
         <h3
           style={{
             color: "saddlebrown",

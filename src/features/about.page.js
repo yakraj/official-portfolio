@@ -71,7 +71,6 @@ export const AboutPage = () => {
         </div>
         new
         <div data-cursor-exclusion>
-          {" "}
           <span>inventions</span>
         </div>
       </p>
