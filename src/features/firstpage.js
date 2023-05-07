@@ -33,9 +33,10 @@ export const FirstLanding = () => {
           const face = document.createElement("div");
           const URL =
             ImageServer +
+            "h_200/" +
             AllImages[Math.floor(Math.random() * AllImages.length)].thumbnail;
           face.classList.add(faces[i]);
-          console.log(URL);
+
           face.style.backgroundImage = `url(${URL})`;
 
           cube.appendChild(face);
@@ -61,6 +62,7 @@ export const FirstLanding = () => {
 
           for (var i = 0; i < children.length; i++) {
             children[i].style.filter = `blur(${(0.9 - randomNum) * 10}px)`;
+            children[i].style.opacity = randomNum + 0.2;
           }
           // cube.style.filter = blur();
         };
@@ -75,8 +77,8 @@ export const FirstLanding = () => {
         }, 50000);
       }
       createCubeElement();
-      // create cube in every 13 sec
-      setInterval(createCubeElement, 13000);
+      // create cube in every 3 sec
+      setInterval(createCubeElement, 3000);
     }
     return;
   }, [AllImages]);
