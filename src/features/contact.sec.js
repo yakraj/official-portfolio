@@ -19,6 +19,58 @@ export const ContactSec = () => {
     notes: message,
   };
 
+  // animation
+
+  const titleRef = useRef(null);
+  const inputRefs = useRef([]);
+  const textareaRef = useRef(null);
+  const buttonRef = useRef(null);
+
+  useEffect(() => {
+    const titleElement = titleRef.current;
+    const inputElements = inputRefs.current;
+    const textareaElement = textareaRef.current;
+    const buttonElement = buttonRef.current;
+
+    gsap.set([titleElement, inputElements, textareaElement, buttonElement], {
+      opacity: 0,
+      y: 50,
+    });
+
+    const tl = gsap.timeline({
+      defaults: { duration: 0.8, ease: "power2.out" },
+    });
+
+    tl.fromTo(titleElement, { opacity: 0, y: 50 }, { opacity: 1, y: 0 })
+      .fromTo(
+        inputElements,
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, stagger: 0.2 },
+        "-=0.4"
+      )
+      .fromTo(
+        [textareaElement, buttonElement],
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0 },
+        "-=0.4"
+      );
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          tl.restart();
+        }
+      });
+    });
+
+    observer.observe(titleElement);
+
+    return () => {
+      observer.disconnect();
+      tl.kill();
+    };
+  }, []);
+
   useEffect(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -77,11 +129,12 @@ export const ContactSec = () => {
           <title>{`Yakraj Pariyar`}</title>
           <link rel="canonical" href="http://yakraj.com/" />
         </Helmet>
-        <h1>Contact Me</h1>
+        <h1 ref={titleRef}>Contact Me</h1>
 
         <div className="contact-lists">
           <div className="leftside-contct">
             <input
+              ref={(el) => (inputRefs.current[0] = el)}
               value={name}
               style={{
                 textTransform: "capitalize",
@@ -92,6 +145,7 @@ export const ContactSec = () => {
               type="text"
             />
             <input
+              ref={(el) => (inputRefs.current[1] = el)}
               value={emailadd}
               onChange={(e) => onemailadd(e.target.value)}
               placeholder="Email"
@@ -102,6 +156,7 @@ export const ContactSec = () => {
 
           <div className="rightside-contct">
             <textarea
+              ref={textareaRef}
               value={message}
               onChange={(e) => {
                 onmessage(e.target.value);
@@ -110,7 +165,11 @@ export const ContactSec = () => {
             />
           </div>
         </div>
-        <button onClick={() => SendNow()} className="send-mail-button">
+        <button
+          ref={buttonRef}
+          onClick={() => SendNow()}
+          className="send-mail-button"
+        >
           <p>Submit</p>
         </button>
       </div>
