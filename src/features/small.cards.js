@@ -74,7 +74,7 @@ export const CardaPlay = () => {
               ease: "power2.out",
               onComplete: () => {
                 gsap.to(box, {
-                  opacity: 0,
+                  opacity: 1,
                   x: "-100%",
                   duration: 0.5,
                   delay: 0.5,
@@ -269,7 +269,6 @@ export const CardaPlay = () => {
 
   const BackgroundChange = (url) => {
     let backgroundImg = document.querySelector(".parent-small-projects");
-
     backgroundImg.style.backgroundImage = `url(${ImageServer}h_700/${url})`;
   };
   return (
