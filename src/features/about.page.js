@@ -1,13 +1,83 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { Cursor } from "react-creative-cursor";
 import "react-creative-cursor/dist/styles.css";
 import { MainContext } from "../conext/main.context";
 import { Helmet } from "react-helmet";
+import gsap from "gsap";
 
 export const AboutPage = () => {
   const { setpopAnimation } = useContext(MainContext);
 
   const imageRef = useRef(null);
+
+  const socialIconsRef = useRef(null);
+
+  useEffect(() => {
+    const socialIconsElement = socialIconsRef.current;
+    const socialIcons = socialIconsElement.getElementsByTagName("a");
+
+    gsap.set(socialIcons, { opacity: 0, y: "50%" });
+
+    const tl = gsap.timeline({
+      defaults: { duration: 1, ease: "power2.out" },
+    });
+
+    tl.fromTo(
+      socialIcons,
+      { opacity: 0, y: "50%" },
+      { opacity: 1, y: "0%", stagger: 0.2 }
+    );
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          tl.restart();
+        }
+      });
+    });
+
+    observer.observe(socialIconsElement);
+
+    return () => {
+      observer.disconnect();
+      tl.kill();
+    };
+  }, []);
+
+  // this animation for about textAlign
+  const textRef = useRef(null);
+
+  useEffect(() => {
+    const textElement = textRef.current;
+    const textSpans = textElement.querySelectorAll("span");
+
+    gsap.set(textSpans, { opacity: 0, scale: 0.5 });
+
+    const tl = gsap.timeline({
+      defaults: { duration: 0.8, ease: "power2.out" },
+    });
+
+    tl.fromTo(
+      textSpans,
+      { opacity: 0, scale: 0.5 },
+      { opacity: 1, scale: 1, stagger: 0.2 }
+    );
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          tl.restart();
+        }
+      });
+    });
+
+    observer.observe(textElement);
+
+    return () => {
+      observer.disconnect();
+      tl.kill();
+    };
+  }, []);
   return (
     <div className="landing-firstpage">
       <Cursor isGelly={true} />
@@ -24,6 +94,7 @@ export const AboutPage = () => {
           justifyContent: "center",
           alignItems: "flex-end",
         }}
+        ref={textRef}
       >
         I
         <div data-cursor-exclusion>
@@ -76,7 +147,11 @@ export const AboutPage = () => {
       </p>
 
       {/* social media icons  */}
-      <div style={{ zIndex: 10 }} className="social-media-icons">
+      <div
+        style={{ zIndex: 10 }}
+        ref={socialIconsRef}
+        className="social-media-icons"
+      >
         <a href="https://youtube.com/@yakraj" target="_blank" rel="noreferrer">
           <div className="media-icon youtube-icon">
             <img src={require("../assets/youtube.com.png")} alt="youtube" />

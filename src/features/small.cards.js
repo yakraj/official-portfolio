@@ -1,7 +1,8 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useRef, useContext } from "react";
 import { Loading } from "../components/loading.gif";
 import { MainContext } from "../conext/main.context";
+import gsap from "gsap";
 
 import "../styles/small.cards.css";
 import { SocialMedia } from "./social-media";
@@ -15,7 +16,86 @@ export const CardaPlay = () => {
     isLoadingSmall,
   } = useContext(MainContext);
 
-  useEffect(() => {}, []);
+  // this effect handles all animation of text
+  const headingContainerRef = useRef(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const heading = entry.target;
+
+          // Reset animation properties
+          gsap.set(heading, {
+            opacity: 0,
+            x: "-100%",
+          });
+
+          // Apply animation using GSAP
+          gsap.to(heading, {
+            opacity: 1,
+            x: 0,
+            duration: 0.8,
+            ease: "power2.out",
+          });
+        }
+      });
+    });
+
+    const headingElements = headingContainerRef.current.querySelectorAll("h1");
+    headingElements.forEach((heading) => {
+      observer.observe(heading);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  const parentRef = useRef(null);
+
+  // this animation for all of this grid boxes
+
+  useEffect(() => {
+    if (SmallProjects.length) {
+      const parentElement = parentRef.current;
+      const boxes = parentElement.getElementsByTagName("div");
+
+      gsap.set(boxes, { opacity: 0, x: "-100%" });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const box = entry.target;
+
+            gsap.to(box, {
+              opacity: 1,
+              x: 0,
+              duration: 0.5,
+              ease: "power2.out",
+              onComplete: () => {
+                gsap.to(box, {
+                  opacity: 0,
+                  x: "-100%",
+                  duration: 0.5,
+                  delay: 0.5,
+                  ease: "power2.out",
+                });
+              },
+            });
+          }
+        });
+      });
+
+      Array.from(boxes).forEach((box) => {
+        observer.observe(box);
+      });
+
+      return () => {
+        observer.disconnect();
+      };
+    }
+  }, [SmallProjects]);
+
   const [dynamicClass, ondynamicClass] = useState([
     { position: "hide-first", data: "", embed: "" },
     {
@@ -206,7 +286,7 @@ export const CardaPlay = () => {
         className="parent-small-projects"
       >
         <div className="small-projects">
-          <div id="id1681960633380">
+          <div ref={headingContainerRef} id="id1681960633380">
             <h1
               style={{
                 textAlign: "start",
@@ -361,7 +441,7 @@ export const CardaPlay = () => {
                 id="id1681960633380 "
                 className="works-grid"
               >
-                <div className="parent">
+                <div ref={parentRef} className="parent">
                   <div
                     onMouseOver={() => {
                       BackgroundChange(SmallProjects[1].thumbnail);

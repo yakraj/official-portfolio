@@ -3,10 +3,46 @@ import "./recent.works.css";
 import { useContext } from "react";
 import { MainContext } from "../conext/main.context";
 import { ImageServer } from "../components/server";
+import gsap from "gsap";
 export const RecentWorks = () => {
   // create a number array of 1 to 20
   // const { setpopWindowInfo, isLoadingMega } = useContext(MainContext);
+  const parentRef = useRef(null);
+  const observerRef = useRef(null);
 
+  const playAnimation = () => {
+    const parentElement = parentRef.current;
+    const h1Elements = parentElement.querySelectorAll("h1");
+
+    if (gsap) {
+      gsap.set(h1Elements, { opacity: 0, y: -50 });
+
+      gsap.fromTo(
+        h1Elements,
+        { opacity: 0, y: -50 },
+        { opacity: 1, y: 0, duration: 1, stagger: 0.5 }
+      );
+    }
+  };
+
+  const handleIntersection = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        playAnimation();
+      }
+    });
+  };
+
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver(handleIntersection);
+    observerRef.current.observe(parentRef.current);
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, []);
   const [RangeValue, onRangeValue] = useState();
   const ContentScroll = useRef();
   const RangeSlider = useRef();
@@ -34,9 +70,65 @@ export const RecentWorks = () => {
     ContentScroll.current.scrollLeft =
       scrolling - ContentScroll.current.offsetWidth;
   }
+
+  // this animation for cards
+  // const ContentScroll = useRef(null);
+  const observerRef1 = useRef(null);
+  const playAnimation1 = () => {
+    const containerElement = ContentScroll.current;
+    const cardElements = containerElement.querySelectorAll(
+      ".portfolio-card-container"
+    );
+    if (gsap) {
+      gsap.set(cardElements, { opacity: 0, x: -100 });
+
+      gsap.fromTo(
+        cardElements,
+        { opacity: 0, x: -100 },
+        { opacity: 1, x: 0, duration: 1, stagger: 0.2 }
+      );
+    }
+  };
+
+  const handleIntersection1 = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        playAnimation1();
+      }
+    });
+  };
+
+  useEffect(() => {
+    observerRef1.current = new IntersectionObserver(handleIntersection1);
+    observerRef1.current.observe(parentRef.current);
+
+    return () => {
+      if (observerRef1.current) {
+        observerRef1.current.disconnect();
+      }
+    };
+  }, []);
+  // useEffect(() => {
+  //   if (MegaProjects.length) {
+  //     const containerElement = ContentScroll.current;
+  //     console.log(containerElement);
+  //     const cardElements = containerElement.querySelectorAll(
+  //       ".portfolio-card-container"
+  //     );
+
+  //     gsap.set(cardElements, { opacity: 0, x: -100 });
+
+  //     gsap.fromTo(
+  //       cardElements,
+  //       { opacity: 0, x: -100 },
+  //       { opacity: 1, x: 0, duration: 1, stagger: 0.2 }
+  //     );
+  //   }
+  // }, [MegaProjects]);
+
   return (
     <div className="recent-works">
-      <div className="top-nav">
+      <div ref={parentRef} data-cursor-exclusion className="top-nav">
         <h1
           style={{
             fontWeight: 400,
