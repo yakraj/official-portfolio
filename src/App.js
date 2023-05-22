@@ -6,7 +6,7 @@ import { WebContext } from "./conext/main.context";
 import { Server } from "./components/server";
 function App() {
   useEffect(() => {
-    fetch(Server)
+    fetch(Server+"/yakraj")
       .then((response) => response.json())
       .then((data) => {})
       .catch((error) => console.error(error));
